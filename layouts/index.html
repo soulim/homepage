@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
+<head>
+	{{- if .Site.GoogleAnalytics -}}
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', '{{ .Site.GoogleAnalytics }}');
+	</script>
+	{{- end -}}
+
+	<link href="http://gmpg.org/xfn/11" rel="profile">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	{{ .Hugo.Generator }}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<!-- SEO -->
+	<title>{{ .Site.Title }}</title>
+	<meta name="description" content="{{ .Site.Params.description }}" />
+	<meta name="robots" content="index, follow" />
+	<meta name="referrer" content="always" />
+	<!-- Social & Open Graph -->
+	<meta property="og:title" content="{{ .Site.Title }}" />
+	<meta property="og:description" content="{{ .Site.Params.description }}" />
+	<!-- meta property="og:image" content="https://demo.onepagelove.com/fullsingle-html/split/images/social.jpg" /-->
+	<meta property="og:url" content="{{ .Site.BaseURL }}" />
+	<meta name="twitter:title" content="{{ .Site.Title }}" >
+	<meta name="twitter:description" content="{{ .Site.Params.description }}" />
+	<!-- meta name="twitter:image" content="https://demo.onepagelove.com/fullsingle-html/split/images/social.jpg" /-->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@soulim" />
+	<meta name="twitter:creator" content="@soulim" />
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32" />
+	<!-- Styles -->
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/split.css" type="text/css" media="screen" />
+</head>
+<body id="fullsingle" class="page-template-page-fullsingle-split">
+<div class="fs-split">
+	<!-- Image Side -->
+	<div class="split-image">
+	</div>
+	<!-- Content Side -->
+	<div class="split-content">
+		<div class="split-content-vertically-center">
+			<div class="split-intro">
+				<h1>Alexander Sulim</h1>
+				<span class="tagline">{{ .Title }}</span>
+			</div>
+			<div class="split-bio">
+				{{ .Content }}
+			</div>
+			<div class="split-lists">
+				<div class="split-list">
+					<h3>Connect</h3>
+					<ul>
+						<li><a href="mailto:hello@sul.im">Email</a></li>
+						<li>&nbsp;</li>
+					</ul>
+				</div>
+				<div class="split-list">
+					<h3>Social</h3>
+					<ul>
+						<li><a href="https://www.github.com/soulim">GitHub</a></li>
+						<li><a href="https://www.twitter.com/soulim">Twitter</a></li>
+					</ul>
+				</div>
+				<div class="split-list">
+					<h3>Network</h3>
+					<ul>
+						<li><a href="https://www.linkedin.com/in/soulim/">LinkedIn</a></li>
+						<li><a href="https://www.xing.com/profile/Alexander_Sulim/">XING</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="split-credit">
+				<p>&copy;&nbsp;{{ .Site.Copyright }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
