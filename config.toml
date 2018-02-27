@@ -1,34 +1,17 @@
 baseURL = "https://sul.im/"
-copyright = "2018 Alexander Sulim"
+copyright = "Alexander Sulim"
 googleAnalytics = "UA-391915-19"
 languageCode = "en-US"
 title = "Alexander Sulim"
 theme = "hyde"
 
 [params]
-  description = "A software engineer building the web professionally for the last fifteen years, recently focused on APIs at GoHiring."
   layoutReverse = true
 
 [[menu.main]]
 name = "Blog"
 url = "/blog"
 
-[[menu.main]]
-name = "Email"
-url = "mailto:hello@sul.im"
-
-[[menu.main]]
-name = "GitHub"
-url = "https://www.github.com/soulim"
-
-[[menu.main]]
-name = "Twitter"
-url = "https://www.twitter.com/soulim"
-
-[[menu.main]]
-name = "LinkedIn"
-url = "https://www.linkedin.com/in/soulim/"
-
-[[menu.main]]
-name = "XING"
-url = "https://www.xing.com/profile/Alexander_Sulim/"
+# [[menu.main]]
+# name = "XING"
+# url = "https://www.xing.com/profile/Alexander_Sulim/"

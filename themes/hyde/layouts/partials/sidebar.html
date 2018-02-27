@@ -1,10 +1,10 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <h1>{{ .Site.Title }}</h1>
-      <p class="lead">
-      {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
-      </p>
+      {{ with .Site.GetPage "section" "blog" }}
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+      {{ end }}
     </div>
 
     <ul class="sidebar-nav">
@@ -14,8 +14,23 @@
       {{- end }}
     </ul>
 
+    <ul class="sidebar-nav-icons">
+      <li>
+        <a href="mailto:hello@sul.im" title="Email"><span class="icon-envelope"></span></a>
+      </li>
+      <li>
+        <a href="https://www.github.com/soulim" title="GitHub"><span class="icon-social-github"></span></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/soulim/" title="LinkedIn"><span class="icon-social-linkedin"></span></a>
+      </li>
+      <li>
+        <a href="https://www.twitter.com/soulim" title="Twitter"><span class="icon-social-twitter"></span></a>
+      </li>
+    </ul>
+
     <div class="sidebar-credit">
-      <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{ now.Format "2006"}}. All rights reserved. {{end}}</p>
+      <p>&copy;&nbsp;{{ now.Format "2006"}} {{ .Site.Copyright }}</p>
     </div>
   </div>
 </div>

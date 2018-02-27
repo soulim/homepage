@@ -1,9 +1,18 @@
 {{ define "main" -}}
-<ul class="posts">
+<div class="posts">
 {{ range .Data.Pages -}}
-  <li>
-    <span><a href="{{ .Permalink }}">{{ .Title }}</a> <time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</time></span>
-  </li>
+<div class="post">
+  <h1 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h1>
+  <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+  {{ .Summary }}
+  {{ if .Truncated }}
+  <div class="read-more-link">
+    <a href="{{ .RelPermalink }}">Read more…</a>
+  </div>
+  {{ end }}
+</div>
 {{- end }}
-</ul>
+</div>
 {{- end }}

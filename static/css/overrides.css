@@ -11,8 +11,8 @@
 html {
   font-family: 'Lora', serif;
   font-weight: 400;
-  font-size: 21px;
-  line-height: 33px;
+  font-size: 19px;
+  line-height: 30px;
   letter-spacing: -0.2px;
 }
 
@@ -23,6 +23,8 @@ h1 {
 .sidebar {
   background-color: #061C30;
   color: #848d96;
+  /* font-size: 21px; */
+  /* line-height: 33px; */
 }
 
 .sidebar a:hover,
@@ -58,4 +60,18 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   line-height: 14px;
+}
+
+.sidebar-nav {
+  margin-bottom: 4rem;
+}
+
+.sidebar-nav-icons {
+  padding-left: 0;
+}
+
+.sidebar-nav-icons li {
+  display: inline-block;
+  list-style: none;
+  margin-right: .5rem;
 }
