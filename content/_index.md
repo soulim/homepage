@@ -1,5 +1,6 @@
 +++
 title = "Software Engineer. Maker."
+description = "A software engineer building the web professionally for the last fifteen years, recently focused on backend challenges at Babbel."
 +++
 A software engineer building the web professionally for the last fifteen years,
 recently focused on backend challenges at [Babbel](https://www.babbel.com/).
