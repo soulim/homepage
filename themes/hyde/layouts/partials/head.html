@@ -16,7 +16,7 @@
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- SEO -->
@@ -29,7 +29,7 @@
 	<meta property="og:title" content="{{ .Title }}" />
 	<meta property="og:description" content="{{ .Description }}" />
 	<!-- meta property="og:image" content=""-->
-	<meta property="og:url" content="{{ .URL }}" />
+	<meta property="og:url" content="{{ .Permalink }}" />
 	<meta name="twitter:title" content="{{ .Title }}" >
 	<meta name="twitter:description" content="{{ .Description }}" />
 	<!-- meta name="twitter:image" content="" /-->
@@ -47,5 +47,5 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="/favicon.png">
 
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ with .OutputFormats.Get "RSS" }}<link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" />{{ end }}
 </head>
