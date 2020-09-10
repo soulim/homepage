@@ -12,7 +12,3 @@ enableEmoji = true
 [[menu.main]]
 name = "Blog"
 url = "/blog"
-
-# [[menu.main]]
-# name = "XING"
-# url = "https://www.xing.com/profile/Alexander_Sulim/"
