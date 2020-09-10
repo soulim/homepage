@@ -3,6 +3,7 @@ copyright = "Alexander Sulim"
 googleAnalytics = "UA-391915-19"
 languageCode = "en-US"
 title = "Alexander Sulim"
+description = "A software engineer building the web professionally for the last fifteen years, recently focused on backend challenges at Babbel."
 theme = "hyde"
 enableEmoji = true
 
