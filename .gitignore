@@ -1,4 +1,6 @@
 .DS_Store
-public/
+bin/
 online.log
+public/
+tmp/
 website.zip
