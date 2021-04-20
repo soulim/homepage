@@ -1,6 +1,6 @@
 # Homepage
 
-A personal website located at <https://sul.im>
+A personal website located at <https://sul.im>.
 
 
 ## Contributing
