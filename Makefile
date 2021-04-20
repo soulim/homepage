@@ -27,14 +27,13 @@ HUGO = $(BIN_DIR)/hugo
 $(HUGO): | $(BIN_DIR) $(TMP_DIR)
 	wget --quiet \
          --no-verbose \
-         --show-progress \
          --tries=3 \
          --directory-prefix=$(TMP_DIR) \
          "https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz" \
-    && find $(TMP_DIR) -name "*_$(OS)-64bit.tar.gz" -exec tar --gzip \
-                                                              --extract \
-                                                              --directory $(BIN_DIR) \
-                                                              --file='{}' ./hugo \; \
+    && tar --gzip \
+           --extract \
+           --directory=$(BIN_DIR) \
+           --file=$(TMP_DIR)/hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz ./hugo \
     && $(HUGO) version
 
 .PHONY: all
@@ -51,7 +50,6 @@ deploy: all
         $(PUB_DIR) \
     && wget --quiet \
             --no-verbose \
-            --show-progress \
             --tries=3 \
             --output-document=/dev/null \
             --server-response \
@@ -64,5 +62,6 @@ deploy: all
 clean:
 	rm -rf $(BIN_DIR)
 	rm -rf $(TMP_DIR)
+	rm -rf $(PUB_DIR)
 
 .DEFAULT_GOAL := all
