@@ -33,7 +33,7 @@ $(HUGO): | $(BIN_DIR) $(TMP_DIR)
     && tar --gzip \
            --extract \
            --directory=$(BIN_DIR) \
-           --file=$(TMP_DIR)/hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz ./hugo \
+           --file=$(TMP_DIR)/hugo_$(HUGO_VERSION)_$(OS)-64bit.tar.gz hugo \
     && $(HUGO) version
 
 .PHONY: all
