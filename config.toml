@@ -12,3 +12,7 @@ enableEmoji = true
 [[menu.main]]
 name = "Blog"
 url = "/blog"
+
+[[menu.main]]
+name = "Now"
+url = "/now"
