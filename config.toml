@@ -1,6 +1,5 @@
 baseURL = "https://sul.im/"
 copyright = "Alexander Sulim"
-googleAnalytics = "UA-391915-19"
 languageCode = "en-US"
 title = "Alexander Sulim"
 theme = "hyde"
