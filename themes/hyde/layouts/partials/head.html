@@ -1,31 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
 <head>
-  {{- if .Site.GoogleAnalytics -}}
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', '{{ .Site.GoogleAnalytics }}');
-	</script>
-	{{- end -}}
-
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   {{ hugo.Generator }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <!-- SEO -->
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
 
   <meta name="description" content="{{ .Description }}" />
 	<meta name="robots" content="index, follow" />
 	<meta name="referrer" content="always" />
-  <!-- Social & Open Graph -->
 	<meta property="og:title" content="{{ .Title }} · {{ .Site.Title }}" />
 	<meta property="og:description" content="{{ .Description }}" />
 	<!-- meta property="og:image" content=""-->
@@ -48,4 +33,5 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   {{ with .OutputFormats.Get "RSS" }}<link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" />{{ end }}
+  <script async defer data-domain="sul.im" src="https://plausible.io/js/plausible.js"></script>
 </head>
