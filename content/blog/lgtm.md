@@ -2,6 +2,7 @@
 title = "LGTM: a Chrome extension"
 description = "LGTM extension prints review statuses as stamp labels on the GitHub pull request overview page."
 date = 2018-05-15
+draft = false
 +++
 
 If you don't know *LGTM* is an initialism of "looks good to me".

@@ -2,6 +2,7 @@
 title = "Teaching kids responsibility"
 description = "When a positive video game experience goes beyond the virtual world."
 date = 2021-04-27
+draft = false
 +++
 
 Not being able to leave an apartment for a couple of weeks due to a COVID-19

@@ -2,6 +2,7 @@
 title = "Passwordless authentication: one step further"
 description = "How to authenticate a user without keeping the email address in the database."
 date = 2016-11-16
+draft = false
 +++
 
 Today it is hard to image an app or a website on the internet that does not require authentication. Usually a sign-up form have at least two fields — email and password. That immediately brings two problems:

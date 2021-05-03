@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <div class="container container-post py-3 py-lg-5">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-8">
+        <h1 class="display-5 pb-2 border-bottom">{{ .Title }}</h1>
+        <p class="mb-md-5"><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+
+  {{ $readNext := or .NextInSection .PrevInSection }}
+  {{ if $readNext }}
+    {{ with $readNext }}
+      <div class="border-top py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h1 class="display-6 pb-2 pb-lg-5">Read next</h1>
+            </div>
+            <div class="col-md-8">
+              <h2 class="pb-2 pb-md-3"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              {{ .Summary }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

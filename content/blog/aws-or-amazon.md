@@ -2,6 +2,7 @@
 title = "AWS Lambda or Amazon Lambda?"
 description = "A tool to automatically check correctness of AWS service names in prose"
 date = 2020-09-12
+draft = false
 +++
 
 As a cloud platform [Amazon Web Services][aws] (AWS) offers over 175 services. If you pay attention, you'll notice that people often do mistakes in the names of these services. For example they say *Amazon* Lambda instead of [*AWS* Lambda][lambda], or *AWS* DynamoDB instead of [*Amazon* DynamoDB][dynamodb].

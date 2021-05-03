@@ -2,16 +2,17 @@ baseURL = "https://sul.im/"
 copyright = "Alexander Sulim"
 languageCode = "en-US"
 title = "Alexander Sulim"
-theme = "hyde"
+theme = "pure"
 enableEmoji = true
 
-[params]
-  layoutReverse = true
-
 [[menu.main]]
+identifier = "blog"
+title = "Blog"
 name = "Blog"
-url = "/blog"
+url = "/blog/"
 
 [[menu.main]]
+identifier = "now"
+title = "Now"
 name = "Now"
-url = "/now"
+url = "/now/"
