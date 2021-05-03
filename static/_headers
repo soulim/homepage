@@ -1,0 +1,3 @@
+# Block Google's FloC
+/*
+  Permissions-Policy: interest-cohort=()
