@@ -16,3 +16,14 @@ identifier = "now"
 title = "Now"
 name = "Now"
 url = "/now/"
+
+[privacy]
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = true
+    disableInlineCSS = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
