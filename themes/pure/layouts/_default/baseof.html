@@ -6,17 +6,15 @@
 
     {{ hugo.Generator }}
 
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
     <meta name="description" content="{{ .Description }}" />
     <meta name="robots" content="index, follow" />
     <meta name="referrer" content="always" />
-    <meta property="og:title" content="{{ .Title }} · {{ .Site.Title }}" />
-    <meta property="og:description" content="{{ .Description }}" />
-    <meta property="og:url" content="{{ .Site.BaseURL }}" />
-    <meta name="twitter:title" content="{{ .Title }} · {{ .Site.Title }}" >
-    <meta name="twitter:description" content="{{ .Description }}" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@soulim" />
-    <meta name="twitter:creator" content="@soulim" />
+
+    {{ template "_internal/opengraph.html" . -}}
+
+    {{ template "_internal/twitter_cards.html" . -}}
+    <meta name="twitter:creator" content="@{{ .Site.Social.twitter }}" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -29,8 +27,6 @@
     {{ range .AlternativeOutputFormats -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
-
-    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
 
     <script async defer data-domain="sul.im" src="https://plausible.io/js/plausible.js"></script>
   </head>

@@ -1,8 +1,16 @@
----
-title: "The excitement of making things real"
-date: 2021-05-07T12:38:33+02:00
-draft: false
----
++++
+title = "The excitement of making things real"
+description = """\
+  After working as a software engineer for 20 years, it’s still exciting \
+  to see how the results of your work become alive and you still feel \
+  yourself as a kid at that moment :)\
+  """
+images = [
+  "blog/images/social-media/excitement-of-making.cover.png"
+]
+date = 2021-05-07T12:38:33+02:00
+draft = false
++++
 
 
 A software engineer career started for me in 2001 when I joined a tiny start-up

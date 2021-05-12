@@ -1,6 +1,9 @@
 +++
 title = "LGTM: a Chrome extension"
 description = "LGTM extension prints review statuses as stamp labels on the GitHub pull request overview page."
+images = [
+  "blog/images/social-media/lgtm.cover.png"
+]
 date = 2018-05-15
 draft = false
 +++

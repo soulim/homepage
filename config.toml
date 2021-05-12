@@ -5,6 +5,9 @@ title = "Alexander Sulim"
 theme = "pure"
 enableEmoji = true
 
+[social]
+  twitter = "soulim"
+
 [[menu.main]]
 identifier = "blog"
 title = "Blog"
