@@ -2,7 +2,7 @@
 title = "Welcome to Vim... again"
 description = "TODO: Add description"
 images = [
-  "blog/images/social-media/TODO.png"
+  "blog/images/social-media/welcome-to-vim-again.cover.png"
 ]
 date = 2021-05-16
 draft = false
