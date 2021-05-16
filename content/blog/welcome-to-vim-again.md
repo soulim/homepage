@@ -1,6 +1,6 @@
 +++
 title = "Welcome to Vim... again"
-description = "Everyone has a unique story and relationships with Vim. This is my story and learned lessons."
+description = "Everyone has a unique story and relationships with Vim. This is my story and a couple lessons learned after five failed attempts to tame the mighty editor."
 images = [
   "blog/images/social-media/welcome-to-vim-again.cover.png"
 ]
