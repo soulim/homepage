@@ -16,6 +16,10 @@
     {{ template "_internal/twitter_cards.html" . -}}
     <meta name="twitter:creator" content="@{{ .Site.Social.twitter }}" />
 
+    {{ $font := resources.Get "fonts/jetbrains-mono-v6-latin-regular.woff2"
+                | resources.Fingerprint "sha512" -}}
+    <link rel="preload" href="{{ $font.RelPermalink }}" as="font" type="font/woff2">
+
     {{ $image := resources.Get "images/apple-touch-icon.png"
                  | resources.Minify
                  | resources.Fingerprint "sha512" -}}
