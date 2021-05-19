@@ -2,7 +2,10 @@
 <div class="container py-3 py-lg-5">
   <div class="row pt-md-5 align-items-center">
     <div class="col-md-6">
-      <img src="/images/me.jpg"
+      {{ $image := resources.Get "images/alexander-sulim.jpg"
+                   | resources.Minify
+                   | resources.Fingerprint "sha512" -}}
+      <img src="{{ $image.RelPermalink }}"
            class="d-block mx-auto rounded img-fluid mb-3"
            alt="Alexander Sulim" loading="lazy">
     </div>

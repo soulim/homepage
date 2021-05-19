@@ -16,31 +16,17 @@
     {{ template "_internal/twitter_cards.html" . -}}
     <meta name="twitter:creator" content="@{{ .Site.Social.twitter }}" />
 
-    {{ $image := resources.Get "images/apple-touch-icon.png"
-                 | resources.Minify
-                 | resources.Fingerprint "sha512" -}}
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ $image.RelPermalink }}">
-    {{ $image := resources.Get "images/favicon-32x32.png"
-                 | resources.Minify
-                 | resources.Fingerprint "sha512" -}}
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ $image.RelPermalink }}">
-    {{ $image := resources.Get "images/favicon-16x16.png"
-                 | resources.Minify
-                 | resources.Fingerprint "sha512" -}}
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ $image.RelPermalink }}">
-    {{ $webmanifest := resources.Get "site.webmanifest"
-                       | resources.ExecuteAsTemplate "site.webmanifest" .
-                       | resources.Fingerprint "sha512" -}}
-    <link rel="manifest" href="{{ $webmanifest.RelPermalink }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-    {{ $style := resources.Get "styles/bootstrap.v5.0.0-beta3.min.css"
-                 | resources.Fingerprint "sha512" -}}
-    <link href="{{ $style.RelPermalink }}" rel="stylesheet">
-    {{ $style := resources.Get "styles/main.css"
-                 | resources.ExecuteAsTemplate "main.css" .
-                 | resources.Minify
-                 | resources.Fingerprint "sha512" -}}
-    <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+    {{ $font := resources.Get "fonts/jetbrains-mono-v6-latin-regular.woff2" |
+    resources.Fing -}}
+    <link rel="preload" href="{{ $font.Permalink }}" as="font" type="font/woff2">
+
+    <link href="/styles/bootstrap.v5.0.0-beta3.min.css" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
 
     {{ range .AlternativeOutputFormats -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
@@ -89,8 +75,6 @@
       </div>
       {{ end }}
     </footer>
-    {{ $javascript := resources.Get "javascript/bootstrap.v5.0.0-beta3.min.js"
-                      | resources.Fingerprint "sha512" -}}
-    <script src="{{ $javascript.RelPermalink }}"></script>
+    <script src="/javascript/bootstrap.v5.0.0-beta3.min.js"></script>
   </body>
 </html>
