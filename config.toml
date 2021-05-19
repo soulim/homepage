@@ -5,6 +5,9 @@ title = "Alexander Sulim"
 theme = "pure"
 enableEmoji = true
 
+[sitemap]
+priority = 0.5
+
 [social]
   twitter = "soulim"
 
