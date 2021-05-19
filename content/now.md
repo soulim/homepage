@@ -3,6 +3,10 @@ title = "What I'm doing now"
 description = "The work and other priorities that keep me busy now."
 date = 2021-04-21
 draft = false
+
+[sitemap]
+changefreq = "monthly"
+priority = 0.4
 +++
 
 As current situation with COVID-19 doesn't provide many chances to travel,
