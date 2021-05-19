@@ -19,6 +19,12 @@
     {{ $font := resources.Get "fonts/jetbrains-mono-v6-latin-regular.woff2"
                 | resources.Fingerprint "sha512" -}}
     <link rel="preload" href="{{ $font.RelPermalink }}" as="font" type="font/woff2">
+    {{ $style := resources.Get "styles/bootstrap.v5.0.0-beta3.min.css"
+                 | resources.Fingerprint "sha512" -}}
+    <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
+    {{ $javascript := resources.Get "javascript/bootstrap.v5.0.0-beta3.min.js"
+                      | resources.Fingerprint "sha512" -}}
+    <link rel="preload" href="{{ $javascript.RelPermalink }}" as="script">
 
     {{ $image := resources.Get "images/apple-touch-icon.png"
                  | resources.Minify
@@ -95,6 +101,6 @@
     </footer>
     {{ $javascript := resources.Get "javascript/bootstrap.v5.0.0-beta3.min.js"
                       | resources.Fingerprint "sha512" -}}
-    <script src="{{ $javascript.RelPermalink }}"></script>
+    <script defer src="{{ $javascript.RelPermalink }}"></script>
   </body>
 </html>
