@@ -3,9 +3,13 @@
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-8">
-        <h1 class="display-5 pb-2 border-bottom">{{ .Title }}</h1>
-        <p class="mb-md-5"><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
-        {{ .Content }}
+        <article>
+          <header>
+            <h1 class="display-5 pb-2 border-bottom">{{ .Title }}</h1>
+            <p class="mb-md-5"><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+          </header>
+          {{ .Content }}
+        </article>
       </div>
     </div>
   </div>
@@ -20,8 +24,13 @@
               <h1 class="display-6 pb-2 pb-lg-5">Read next</h1>
             </div>
             <div class="col-md-8">
-              <h2 class="pb-2 pb-md-3"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-              {{ .Summary }}
+              <article>
+                <header>
+                  <h2 class="pb-2 pb-md-3"><a href="{{ .RelPermalink }}"
+                                              title="Read '{{ .Title }}'">{{ .Title }}</a></h2>
+                </header>
+                {{ .Summary }}
+              </article>
             </div>
           </div>
         </div>

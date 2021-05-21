@@ -1,24 +1,28 @@
 {{ define "main" }}
-<div class="container py-0 py-lg-5">
-  <div class="row">
-    <div class="col-md-4">
-      <h1 class="display-1 mb-3 mb-lg-5 pb-2">{{ .Type | humanize | title }}</h1>
-      <hr class="col-12 col-md-3 my-3 my-lg-5">
-    </div>
-    <div class="col-md-8">
-      {{ range .Pages.ByDate.Reverse }}
-        <h2>
-        {{ if .Truncated }}
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{ else }}
-          {{ .Title }}
+  <div class="container py-0 py-lg-5">
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="display-1 mb-3 mb-lg-5 pb-2">{{ .Type | humanize | title }}</h1>
+        <hr class="col-12 col-md-3 my-3 my-lg-5">
+      </div>
+      <div class="col-md-8">
+        {{ range .Pages.ByDate.Reverse }}
+          <article>
+            <header>
+              <h2>
+                {{ if .Truncated }}
+                  <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'">{{ .Title }}</a>
+                {{ else }}
+                  {{ .Title }}
+                {{ end }}
+              </h2>
+              <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+            </header>
+            {{ .Summary }}
+          </article>
+          <hr class="col-3 col-md-2 my-5">
         {{ end }}
-        </h2>
-        <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
-        {{ .Summary }}
-        <hr class="col-3 col-md-2 my-5">
-      {{ end }}
+      </div>
     </div>
   </div>
-</div>
 {{ end }}
