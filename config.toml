@@ -4,6 +4,7 @@ languageCode = "en-US"
 title = "Alexander Sulim"
 theme = "pure"
 enableEmoji = true
+ignoreErrors = ["error-remote-getjson"]     # Ignore error in offline mode
 
 [sitemap]
 priority = 0.5
