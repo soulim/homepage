@@ -11,7 +11,7 @@
             <header>
               <h2>
                 {{ if .Truncated }}
-                  <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'">{{ .Title }}</a>
+                  <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark">{{ .Title }}</a>
                 {{ else }}
                   {{ .Title }}
                 {{ end }}
