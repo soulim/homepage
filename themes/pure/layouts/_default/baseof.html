@@ -11,6 +11,8 @@
     <meta name="referrer" content="always" />
 
     {{ template "_internal/opengraph.html" . -}}
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+
     {{ template "_internal/twitter_cards.html" . -}}
     <meta name="twitter:creator" content="@{{ .Site.Social.twitter }}" />
 
