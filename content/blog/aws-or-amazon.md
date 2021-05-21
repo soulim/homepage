@@ -38,7 +38,7 @@ The phase of testing and polishing the substitution style revealed a fact, that 
 
 ## Results
 
-![AWS Vale demo output][screenshot-aws-vale-demo-output]
+![Screenshot: AWS Vale demo output][screenshot-aws-vale-demo-output]
 
 You can find [AWS style for Vale on GitHub][vale-aws]. Grab the latest release if you aren't interested in technical details.
 

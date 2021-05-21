@@ -19,7 +19,7 @@ wildlife adventure" from *ustwo games*.
 
 <!--more-->
 
-![Playing Alba][playing-alba]
+![Tim plays 'Alba: a wildlife adventure'][playing-alba]
 
 Tim loves animals and anything related to them. That's why Alba got our
 attention. It's a story about a little girl who sets out to save wildlife on a
