@@ -10,11 +10,9 @@
     <meta name="robots" content="index, follow" />
     <meta name="referrer" content="always" />
 
-    {{ template "_internal/opengraph.html" . -}}
-    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ partial "opengraph.html" . -}}
 
-    {{ template "_internal/twitter_cards.html" . -}}
-    <meta name="twitter:creator" content="@{{ .Site.Social.twitter }}" />
+    {{ partial "twitter_card.html" . -}}
 
     {{ $font := resources.Get "fonts/jetbrains-mono-v6-latin-regular.woff2"
                 | resources.Fingerprint "sha512" -}}
