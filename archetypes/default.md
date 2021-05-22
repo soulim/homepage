@@ -1,6 +1,12 @@
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
----
++++
+title = "TODO: Add title"
+description = """\
+  TODO: Add description \
+  """
+images = [
+  "TODO: Add social media image"
+]
+date = {{ .Date }}
+draft = true
++++
 
