@@ -1,6 +1,7 @@
 +++
 title = "Software Engineer. Maker."
 description = "A software engineer building the web professionally for the last fifteen years, recently focused on backend challenges at Babbel."
+cover = "images/alexander-sulim.jpg"
 date = 2021-05-07
 draft = false
 

@@ -1,9 +1,7 @@
 +++
 title = "AWS Lambda or Amazon Lambda?"
 description = "A tool to automatically check correctness of AWS service names in prose."
-images = [
-  "blog/images/social-media/aws-or-amazon.cover.png"
-]
+cover = "blog/images/social-media/aws-or-amazon.cover.png"
 date = 2020-09-12
 draft = false
 +++

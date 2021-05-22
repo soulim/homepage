@@ -1,9 +1,7 @@
 +++
 title = "Teaching kids responsibility"
 description = "When a positive video game experience goes beyond the virtual world."
-images = [
-  "blog/images/social-media/alba.cover.png"
-]
+cover = "blog/images/social-media/alba.cover.png"
 date = 2021-04-27
 draft = false
 +++

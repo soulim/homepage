@@ -5,9 +5,7 @@ description = """\
   to see how the results of your work become alive and you still feel \
   yourself as a kid at that moment :)\
   """
-images = [
-  "blog/images/social-media/excitement-of-making.cover.png"
-]
+cover = "blog/images/social-media/excitement-of-making.cover.png"
 date = 2021-05-07T12:38:33+02:00
 draft = false
 +++

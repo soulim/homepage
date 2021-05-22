@@ -1,9 +1,7 @@
 +++
 title = "LGTM: a Chrome extension"
 description = "LGTM extension prints review statuses as stamp labels on the GitHub pull request overview page."
-images = [
-  "blog/images/social-media/lgtm.cover.png"
-]
+cover = "blog/images/social-media/lgtm.cover.png"
 date = 2018-05-15
 draft = false
 +++
@@ -14,7 +12,7 @@ A few days ago, while going through my Twitter timeline, I spotted one tweet tha
 
 <!--more-->
 
-There is the tweet, btw:
+There is the tweet:
 
 {{< tweet 992146407128686592 >}}
 
@@ -49,7 +47,7 @@ After some research and experimentation, I've ended up with a hack - a proxy fun
 // Because PJAX is using `History.replaceState` and
 // `History.popState` to manipulate URL and update
 // the page parts, this scripts acts as a proxy
-// for `History.replaceState`. It might look a a hack, but
+// for `History.replaceState`. It might look as a hack, but
 // it is the best solution I have found so far.
 var addHistoryStateProxy = function () {
     var replaceState = history.replaceState;
@@ -64,7 +62,7 @@ var addHistoryStateProxy = function () {
 The next tricky step was to figure out where and when to add the hack. There is what I decided to do:
 
 {{< highlight js >}}
-// The extention is running in a sandbox, so
+// The extension is running in a sandbox, so
 // the `History.replaceState` proxy script must be
 // injected on the page.
 var script = document.createElement('script');
