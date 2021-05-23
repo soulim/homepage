@@ -1,10 +1,10 @@
 +++
 title = "A hacker mindset"
 description = """\
-  As software engineers sometimes to solve any problem we tend to stick to\
-  a set of tools we know. How often we pick a tool just because we know it,\
-  and not necessarily because it's right for a task at hand? These are my\
-  rules to overcome that.\
+  Sometimes to solve a problem we tend to choose a set of tools we got used \
+  to. How often we pick a tool just because we know it, and not necessarily \
+  because it's the right one for a task at hand? These are my rules to \
+  overcome that.\
   """
 cover = "blog/images/social-media/a-hacker-mindset.cover.png"
 date = 2021-05-21T14:27:59+02:00
