@@ -14,7 +14,7 @@ For those who don't know, Vim is a text editor. Unlike many other editors, it ha
 
 One of the first and classic challenges that many people (everyone?..) have to solve on the way of mastering Vim is ["How do I exit the Vim editor?"](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor). As of today, this question on StackOverflow has 4252 upvotes and the answer is upvoted 5397 times!
 
-![StackOverflow: How do I exit the Vim editor?](/blog/images/stackoverflow-how-to-exit-vim.png)
+{{< img src="/blog/images/stackoverflow-how-to-exit-vim.png" alt="StackOverflow: How do I exit the Vim editor?" >}}
 
 Does that mean Vim is hard to master? **Yes**, if you used any other editor before and try to apply the same approaches in Vim. **No**, if you open to discover something different from what you are used to.
 

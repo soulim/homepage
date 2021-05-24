@@ -17,7 +17,7 @@ wildlife adventure" from *ustwo games*.
 
 <!--more-->
 
-![Tim plays 'Alba: a wildlife adventure'][playing-alba]
+{{< img src="/blog/images/playing-alba.jpg" alt="Tim plays 'Alba: a wildlife adventure" >}}
 
 Tim loves animals and anything related to them. That's why Alba got our
 attention. It's a story about a little girl who sets out to save wildlife on a
@@ -44,5 +44,3 @@ that a little kid can change the real world. Thank you *ustwo games*!
 
 ---
 The official website of the game: <https://www.albawildlife.com/>
-
-[playing-alba]: /blog/images/playing-alba.jpg
