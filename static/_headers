@@ -46,3 +46,9 @@
   Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 /*.min.*.woff
   Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+/*.min.*.png
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+/*.min.*.jpg
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+/*.min.*.ico
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
