@@ -1,33 +1,43 @@
 /*
   # Block Google's FloC
   Permissions-Policy: interest-cohort=()
+
   # Instruct browsers to access the website only using HTTPS
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
   # Instruct browsers to follow MIME-types advertised in the Content-Type
   # headers.
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   X-Content-Type-Options: nosniff
+
   # Instruct browsers to stop loading pages when they detect XSS-attacks.
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
   X-XSS-Protection: 1; mode=block
+
+  # TODO: Fix the content security policy.
   # Content Security Policy: load content only from 'self' except YouTube and
   # Plausible.
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-  Content-Security-Policy: default-src 'self' https://www.youtube-nocookie.com; frame-ancestors 'self' https://www.youtube-nocookie.com; manifest-src 'self'; connect-src 'self' https://plausible.io; font-src 'self'; img-src 'self' data:; script-src 'self' https://plausible.io; style-src 'self'
+  # Content-Security-Policy: default-src 'self' https://www.youtube-nocookie.com; frame-ancestors 'self' https://www.youtube-nocookie.com; manifest-src 'self'; connect-src 'self' https://plausible.io; font-src 'self'; img-src 'self' data:; script-src 'self' https://plausible.io; style-src 'self'
+
   # Instruct browsers to send the origin (only) when the protocol security
   # level stays the same (HTTPS -> HTTPS).
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
   Referrer-Policy: strict-origin
+
   # Feature policy.
   # https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy
   Feature-Policy: geolocation 'self'
+
+  # TODO: Fix caching for immutable content.
   # Clients can cache a resource but must revalidate each time before using it.
   # This means HTTP request occurs each time though, it can skip downloading
   # HTTP body if the content is valid.
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
-  Cache-Control: no-cache
+  # Cache-Control: no-cache
 
-/*.min.:fingerprint.:extension
-  # Allow clients to cache all immutable content.
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+# TODO: Fix caching for immutable content.
+# /*.min.:fingerprint.:extension
+#   # Allow clients to cache all immutable content.
+#  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
