@@ -38,7 +38,6 @@
   # Cache-Control: no-cache
 
 # TODO: Fix caching for immutable content.
-/*.min.:fingerprint.js
-  X-Test: 2
-#   # Allow clients to cache all immutable content.
-#  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+/*.min.*.js
+  # Allow clients to cache all immutable content.
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
