@@ -36,7 +36,7 @@ The phase of testing and polishing the substitution style revealed a fact, that 
 
 ## Results
 
-![Screenshot: AWS Vale demo output][screenshot-aws-vale-demo-output]
+{{< img src="/blog/images/screenshot-aws-vale-demo-output.png" alt="Screenshot: AWS Vale demo output" >}}
 
 You can find [AWS style for Vale on GitHub][vale-aws]. Grab the latest release if you aren't interested in technical details.
 
@@ -54,6 +54,5 @@ If you use GitHub Actions, there is [an example][vale-aws-demo] of how AWS style
 [list]: https://github.com/soulim/vale-aws/blob/f30baab722f0b059af4c77f0b606e0716f7d451f/bin/list
 [gen]: https://github.com/soulim/vale-aws/blob/f30baab722f0b059af4c77f0b606e0716f7d451f/bin/gen
 [auto-scaling]: https://aws.amazon.com/de/autoscaling/
-[screenshot-aws-vale-demo-output]: /blog/images/screenshot-aws-vale-demo-output.png
 [vale-aws]: https://github.com/soulim/vale-aws
 [vale-aws-demo]: https://github.com/soulim/vale-aws-demo/pull/1/checks?check_run_id=1078148144
