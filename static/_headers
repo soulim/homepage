@@ -30,25 +30,42 @@
   # https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy
   Feature-Policy: geolocation 'self'
 
-  # TODO: Fix caching for immutable content.
   # Clients can cache a resource but must revalidate each time before using it.
   # This means HTTP request occurs each time though, it can skip downloading
   # HTTP body if the content is valid.
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
-  # Cache-Control: no-cache
+  Cache-Control: public
+  Cache-Control: max-age=0
+  Cache-Control: must-revalidate
 
-# Allow clients to cache all immutable content.
+# Allow clients to cache all immutable content and do not revalidate it.
 /*.min.*.js
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+  Cache-Control: public
+  Cache-Control: max-age=31536000
+  Cache-Control: s-maxage=31536000
+  Cache-Control: immutable
 /*.min.*.css
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+  Cache-Control: public
+  Cache-Control: max-age=31536000
+  Cache-Control: s-maxage=31536000
+  Cache-Control: immutable
 /*.min.*.woff2
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
-/*.min.*.woff
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+  Cache-Control: public
+  Cache-Control: max-age=31536000
+  Cache-Control: s-maxage=31536000
+  Cache-Control: immutable
 /*.min.*.png
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+  Cache-Control: public
+  Cache-Control: max-age=31536000
+  Cache-Control: s-maxage=31536000
+  Cache-Control: immutable
 /*.min.*.jpg
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+  Cache-Control: public
+  Cache-Control: max-age=31536000
+  Cache-Control: s-maxage=31536000
+  Cache-Control: immutable
 /*.min.*.ico
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+  Cache-Control: public
+  Cache-Control: max-age=31536000
+  Cache-Control: s-maxage=31536000
+  Cache-Control: immutable
