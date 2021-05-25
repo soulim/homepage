@@ -14,9 +14,6 @@
 
     {{ partial "twitter_card.html" . -}}
 
-    {{ $font := resources.Get "fonts/jetbrains-mono-v6-latin-regular.woff2"
-                | resources.Fingerprint "sha512" -}}
-    <link rel="preload" href="{{ $font.RelPermalink }}" integrity="{{ $font.Data.Integrity }}" as="font" type="font/woff2">
     {{ $style := resources.Get "styles/bootstrap.v5.0.0-beta3.min.css"
                  | resources.Fingerprint "sha512" -}}
     <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
