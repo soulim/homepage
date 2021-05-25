@@ -40,7 +40,7 @@ url = "/now/"
     [server.headers.values]
       X-Frame-Options = "DENY"
       Content-Security-Policy = """\
-                                default-src 'self'; \
+                                default-src 'none'; \
                                 connect-src 'self' https://plausible.io; \
                                 font-src 'self'; \
                                 frame-src 'self' https://www.youtube-nocookie.com; \
