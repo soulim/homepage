@@ -42,6 +42,7 @@ url = "/now/"
       Content-Security-Policy = """\
                                 default-src 'none'; \
                                 base-uri 'self'; \
+                                form-action 'self'; \
                                 connect-src 'self' https://plausible.io; \
                                 font-src 'self'; \
                                 frame-src 'self' https://www.youtube-nocookie.com; \
