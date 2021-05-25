@@ -17,14 +17,13 @@
   X-XSS-Protection: 1; mode=block
 
   # Disallow to frame the website.
-  # TODO: Add a link on `X-Frame-Options` docs.
+  # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   X-Frame-Options: DENY
 
-  # TODO: Fix the content security policy.
   # Content Security Policy: load content only from 'self' except YouTube and
   # Plausible.
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-  # Content-Security-Policy: default-src 'self' https://www.youtube-nocookie.com; frame-ancestors 'self' https://www.youtube-nocookie.com; manifest-src 'self'; connect-src 'self' https://plausible.io; font-src 'self'; img-src 'self' data:; script-src 'self' https://plausible.io; style-src 'self'
+  Content-Security-Policy: default-src 'self'; connect-src 'self' https://plausible.io; font-src 'self'; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self'; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'
 
   # Instruct browsers to send the origin (only) when the protocol security
   # level stays the same (HTTPS -> HTTPS).
