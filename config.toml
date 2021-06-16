@@ -46,7 +46,7 @@ url = "/now/"
                                 connect-src 'self' https://plausible.io; \
                                 font-src 'self'; \
                                 frame-src 'self' https://www.youtube-nocookie.com; \
-                                img-src 'self'; \
+                                img-src 'self' data:; \
                                 manifest-src 'self'; \
                                 media-src 'self'; \
                                 object-src 'none'; \
