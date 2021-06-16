@@ -17,6 +17,11 @@ Projects I'm working on:
 
   * A tool that connects my handwritten notes with the internet.
   * A tool with an exciting name *"holodeck"*.
+  * [**Code && Beyond**](https://anchor.fm/codeandbeyond) a weekly podcast
+    with my friend Pablo and me, two software engineers with more than 35 years of
+    professional experience combined. We talk about creativity, productivity,
+    problem solving, tools, culture, and anything beyond, but still related to
+    the daily life of a software developer.
 
 ---
 

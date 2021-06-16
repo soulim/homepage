@@ -88,10 +88,10 @@
     <main class="flex-shrink-0">
       {{- block "main" . -}}{{- end -}}
     </main>
-    <footer class="mt-auto py-5">
+    <footer class="mt-auto">
       {{ block "footer" . }}
         <div class="container">
-          <div class="row">
+          <div class="row mt-5 py-5">
             <div class="col-md-4">
               <span class="text-muted">&copy;&nbsp;{{ now.Format "2006"}} {{ .Site.Copyright }}</span>
             </div>
