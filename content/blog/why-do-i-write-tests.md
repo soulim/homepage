@@ -10,7 +10,7 @@ description = """\
   """
 cover = "TODO: Add social media image"
 date = 2021-09-25T06:46:53+02:00
-draft = true
+draft = false
 +++
 
 Recently I had an interesting conversation with colleagues on the topic of
