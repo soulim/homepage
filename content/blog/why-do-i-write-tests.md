@@ -8,7 +8,7 @@ description = """\
   especially helpful in cases of hotfixes that need to be deployed \
   as soon as possible.
   """
-cover = "TODO: Add social media image"
+cover = "blog/images/social-media/why-do-i-write-tests.cover.png"
 date = 2021-09-25T06:46:53+02:00
 draft = false
 +++
