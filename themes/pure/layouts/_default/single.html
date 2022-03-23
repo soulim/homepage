@@ -36,32 +36,6 @@
           </div>
         </div>
       </div>
-      <div class="bg-light">
-        <div class="container">
-          <div class="row py-5">
-            <div class="col-md-4">
-              <h1 class="display-6 pb-2 pb-lg-5">Listen</h1>
-            </div>
-            <div class="col-md-2">
-              {{ $image := resources.Get "images/codeandbeyond@800x800.png"
-                           | resources.Minify
-                           | resources.Fingerprint "sha512" -}}
-              <a href="https://anchor.fm/codeandbeyond"><img src="{{ $image.RelPermalink }}" class="d-block mx-auto rounded img-fluid mb-3" alt="Code && Beyond" loading="lazy"></a>
-            </div>
-            <div class="col-md-6">
-              <h2>Code && Beyond</h2>
-              <p>A weekly podcast with my friend Pablo and me, two
-              software engineers with more than 35 years of professional
-              experience combined. We talk about creativity, productivity,
-              problem solving, tools, culture, and anything beyond, but still
-              related to the daily life of a software developer.</p>
-              <p>
-                Give it a listen at <a href="https://anchor.fm/codeandbeyond">anchor.fm/codeandbeyond</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     {{ end }}
   {{ end }}
 {{ end }}

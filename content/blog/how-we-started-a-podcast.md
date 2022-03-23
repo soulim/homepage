@@ -60,9 +60,15 @@ Kudos to everyone who makes educational resources. You rock!
 
 ## Final result
 
-The podcast is online and available already on Spotify, Google Podcasts, Anchor,
-and other platforms. Give it a listen at [anchor.fm/codeandbeyond](https://anchor.fm/codeandbeyond).
-Any feedback is highly appreciated.
+The podcast is online and available already on
+[Spotify](https://open.spotify.com/show/0ZZ9Jv7bUgwLMPJ97KyLyf), [Apple
+Podcasts](https://podcasts.apple.com/podcast/code-beyond/id1572415337), [Google
+Podcasts](https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy81Y2Q0MDhmOC9wb2RjYXN0L3Jzcw==),
+and other platforms.
+
+Give it a listen at
+[codeandbeyond.rocks](https://codeandbeyond.rocks/). Any feedback is highly
+appreciated.
 
 ## Summary
 
