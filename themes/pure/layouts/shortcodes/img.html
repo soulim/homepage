@@ -1,5 +1,4 @@
 {{ $image := resources.Get (.Get "src")
-             | resources.Minify
              | resources.Fingerprint "sha512" }}
 {{ $alt := .Get "alt" }}
 

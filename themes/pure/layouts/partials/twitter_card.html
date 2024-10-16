@@ -1,20 +1,28 @@
-{{ with or $.Params.cover $.Site.Params.cover -}}
-  {{ with resources.Get . -}}
-    {{ $image := resources.Minify .
-                 | resources.Fingerprint "sha512" -}}
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="{{ $image.Permalink }}"/>
-  {{ else -}}
-    <meta name="twitter:card" content="summary"/>
-  {{ end -}}
-{{ else -}}
-  <meta name="twitter:card" content="summary"/>
-{{ end -}}
+{{- $images := partial "_funcs/get-page-images" . }}
+{{- with index $images 0 }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ .Permalink }}">
+{{- else }}
+  <meta name="twitter:card" content="summary">
+{{- end }}
 
-<meta name="twitter:title" content="{{ .Title }}"/>
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
+{{- with or .Title site.Title site.Params.title | plainify }}
+  <meta name="twitter:title" content="{{ . }}">
+{{- end }}
 
-{{ with .Site.Social.twitter -}}
-  <meta name="twitter:site" content="@{{ . }}"/>
-  <meta name="twitter:creator" content="@{{ . }}" />
-{{ end -}}
+{{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+  <meta name="twitter:description" content="{{ trim . "\n\r\t " }}">
+{{- end }}
+
+{{- $twitterSite := "" }}
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- with .twitter }}
+      {{- $content := . }}
+      {{- if not (strings.HasPrefix . "@") }}
+        {{- $content = printf "@%v" . }}
+      {{- end }}
+      <meta name="twitter:site" content="{{ $content }}">
+    {{- end }}
+  {{- end }}
+{{- end }}

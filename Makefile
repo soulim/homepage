@@ -4,7 +4,7 @@ PUB_DIR = ./public
 
 OS = $(shell uname -s)
 
-HUGO_VERSION = 0.88.1
+HUGO_VERSION = 0.135.0
 
 NETLIFY_WEBSITE =
 NETLIFY_ACCESS_TOKEN =

@@ -13,7 +13,7 @@ jobs:
       - name: Cache binaries
         uses: actions/cache@v2
         env:
-          hugo-version: 0.82.0
+          hugo-version: 0.135.0
         with:
           path: ./bin
           key: ${{ runner.os }}-binaries-${{ env.hugo-version }}

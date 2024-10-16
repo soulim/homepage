@@ -3,7 +3,6 @@
   "short_name": "",
   "icons": [
     {{ $image := resources.Get "images/android-chrome-192x192.png"
-                 | resources.Minify
                  | resources.Fingerprint "sha512" -}}
     {
       "src": "{{ $image.RelPermalink }}",
@@ -11,7 +10,6 @@
       "type": "image/png"
     },
     {{ $image := resources.Get "images/android-chrome-512x512.png"
-                 | resources.Minify
                  | resources.Fingerprint "sha512" -}}
     {
       "src": "{{ $image.RelPermalink }}",

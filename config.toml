@@ -9,7 +9,7 @@ ignoreErrors = ["error-remote-getjson"]     # Ignore error in offline mode
 [sitemap]
 priority = 0.5
 
-[social]
+[params]
   twitter = "soulim"
 
 [[menu.main]]

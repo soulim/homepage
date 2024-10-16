@@ -8,13 +8,9 @@ draft = false
 
 If you don't know *LGTM* is an initialism of "looks good to me".
 
-A few days ago, while going through my Twitter timeline, I spotted one tweet that turned on the bulb above my head. I was instantly inspired! :bulb:
+A few days ago, while going through my Twitter timeline, I spotted [one tweet](https://twitter.com/d_jones/status/992146407128686592) that turned on the bulb above my head. I was instantly inspired! :bulb:
 
 <!--more-->
-
-There is the tweet:
-
-{{< tweet 992146407128686592 >}}
 
 I was inspired to create [a Chrome extension that prints stamps on GitHub pull request overview pages](https://chrome.google.com/webstore/detail/lgtm-looks-good-to-me/mbiaidjlljbijjfbeekcocinpfamgkcl). The problem didn't look very complex even if I had no idea how to write an extension.
 

@@ -4,7 +4,6 @@
     <div class="row pt-md-5 align-items-center">
       <div class="col-md-6">
         {{ $image := resources.Get "images/alexander-sulim.jpg"
-                     | resources.Minify
                      | resources.Fingerprint "sha512" -}}
         <img src="{{ $image.RelPermalink }}"
              class="d-block mx-auto rounded img-fluid mb-3"
@@ -42,7 +41,6 @@
     <div class="row py-3 py-lg-5">
       <div class="col-md-2">
         {{ $image := resources.Get "images/codeandbeyond@800x800.png"
-                     | resources.Minify
                      | resources.Fingerprint "sha512" -}}
         <a href="https://codeandbeyond.rocks/"><img src="{{ $image.RelPermalink }}" class="d-block mx-auto rounded img-fluid mb-3" alt="Code && Beyond" loading="lazy"></a>
       </div>
