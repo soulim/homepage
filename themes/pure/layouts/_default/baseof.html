@@ -14,10 +14,10 @@
 
     {{ partial "twitter_card.html" . -}}
 
-    {{ $style := resources.Get "styles/bootstrap.v5.0.0-beta3.min.css"
+    {{ $style := resources.Get "styles/bootstrap.v5.3.3.min.css"
                  | resources.Fingerprint "sha512" -}}
     <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
-    {{ $javascript := resources.Get "javascript/bootstrap.v5.0.0-beta3.min.js"
+    {{ $javascript := resources.Get "javascript/bootstrap.v5.3.3.min.js"
                       | resources.Fingerprint "sha512" -}}
     <link rel="preload" href="{{ $javascript.RelPermalink }}" integrity="{{ $javascript.Data.Integrity }}" as="script">
 
@@ -35,7 +35,7 @@
                        | resources.Fingerprint "sha512" -}}
     <link rel="manifest" href="{{ $webmanifest.RelPermalink }}" integrity="{{ $webmanifest.Data.Integrity }}">
 
-    {{ $style := resources.Get "styles/bootstrap.v5.0.0-beta3.min.css"
+    {{ $style := resources.Get "styles/bootstrap.v5.3.3.min.css"
                  | resources.Fingerprint "sha512" -}}
     <link href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="stylesheet">
     {{ $style := resources.Get "styles/main.css"
@@ -102,7 +102,7 @@
         </div>
       {{ end }}
     </footer>
-    {{ $javascript := resources.Get "javascript/bootstrap.v5.0.0-beta3.min.js"
+    {{ $javascript := resources.Get "javascript/bootstrap.v5.3.3.min.js"
                       | resources.Fingerprint "sha512" -}}
     <script defer src="{{ $javascript.RelPermalink }}" integrity="{{ $javascript.Data.Integrity }}"></script>
   </body>

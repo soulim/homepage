@@ -1,35 +1,5 @@
-/* jetbrains-mono-regular - latin */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       {{ $font := resources.Get "fonts/jetbrains-mono-v6-latin-regular.woff2"
-                   | resources.Fingerprint "sha512" -}}
-       url('{{ $font.RelPermalink }}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       {{ $font := resources.Get "fonts/jetbrains-mono-v6-latin-regular.woff"
-                   | resources.Fingerprint "sha512" -}}
-       url('{{ $font.RelPermalink }}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
 body {
   padding-top: 4.5rem;
-}
-
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.highlight pre {
- font-family: 'JetBrains Mono' !important;
 }
 
 .container-post img {
