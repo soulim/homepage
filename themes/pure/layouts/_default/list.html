@@ -1,11 +1,8 @@
 {{ define "main" }}
-  <div class="container py-0 py-lg-5">
+  <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <h1 class="display-1 mb-3 mb-lg-5 pb-2">{{ .Type | humanize | title }}</h1>
-        <hr class="col-12 col-md-3 my-3 my-lg-5">
-      </div>
-      <div class="col-md-8">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-5 my-5 pb-2 border-bottom">{{ .Type | humanize | title }}</h1>
         {{ range .Pages.ByDate.Reverse }}
           <article>
             <header>
@@ -20,7 +17,7 @@
             </header>
             {{ .Summary }}
           </article>
-          <hr class="col-3 col-md-2 my-5">
+          <hr class="col-3 my-5">
         {{ end }}
       </div>
     </div>

@@ -12,17 +12,19 @@ priority = 0.5
 [params]
   twitter = "soulim"
 
-[[menu.main]]
-identifier = "blog"
-title = "Blog"
-name = "Blog"
-url = "/blog/"
-
-[[menu.main]]
-identifier = "now"
-title = "Now"
-name = "Now"
-url = "/now/"
+[menus]
+  [[menus.main]]
+    title = "Blog"
+    name = "Blog"
+    pageRef = "/blog"
+  [[menus.main]]
+    title = "Now"
+    name = "Now"
+    pageRef = "/now"
+  [[menus.main]]
+    title = "RSS"
+    name = "RSS"
+    pageRef = "/blog/index.xml"
 
 [privacy]
   [privacy.twitter]
