@@ -1,26 +1,21 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ hugo.Generator }}
-
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
     <meta name="description" content="{{ .Description }}" />
     <meta name="robots" content="index, follow" />
     <meta name="referrer" content="always" />
-
     {{ partial "opengraph.html" . -}}
-
     {{ partial "twitter_card.html" . -}}
-
     {{ $style := resources.Get "styles/bootstrap.v5.3.3.min.css"
                  | resources.Fingerprint "sha512" -}}
     <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
     {{ $javascript := resources.Get "javascript/bootstrap.v5.3.3.min.js"
                       | resources.Fingerprint "sha512" -}}
     <link rel="preload" href="{{ $javascript.RelPermalink }}" integrity="{{ $javascript.Data.Integrity }}" as="script">
-
     {{ $image := resources.Get "images/apple-touch-icon.png"
                  | resources.Fingerprint "sha512" -}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $image.RelPermalink }}" integrity="{{ $image.Data.Integrity }}">
@@ -34,7 +29,6 @@
                        | resources.ExecuteAsTemplate "site.webmanifest" .
                        | resources.Fingerprint "sha512" -}}
     <link rel="manifest" href="{{ $webmanifest.RelPermalink }}" integrity="{{ $webmanifest.Data.Integrity }}">
-
     {{ $style := resources.Get "styles/bootstrap.v5.3.3.min.css"
                  | resources.Fingerprint "sha512" -}}
     <link href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="stylesheet">
@@ -42,30 +36,17 @@
                  | resources.ExecuteAsTemplate "main.css" .
                  | resources.Fingerprint "sha512" -}}
     <link href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="stylesheet">
-
     <link rel="alternate" type="application/rss+xml" href="{{ "/blog/index.xml" | absURL }}" title="{{ $.Site.Title }}" />
-
     <link rel="canonical" href="{{ .Permalink }}">
-
     <script async defer data-domain="sul.im" src="https://plausible.io/js/plausible.js"></script>
   </head>
-  <body class="d-flex flex-column h-100">
+  <body>
     <header>
       {{ block "header" . }}
-        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-white">
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
           <div class="container">
-            <a class="navbar-brand"
-               href="{{ "/" | relURL }}"
-               title="Return to the homepage"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-  </svg></a>
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbar-nav"
-                    aria-controls="navbar-nav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{{ "/" | relURL }}" title="Return to the homepage">Alexander Sulim</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar-nav">
@@ -81,10 +62,10 @@
         </nav>
       {{ end }}
     </header>
-    <main class="flex-shrink-0">
+    <main>
       {{- block "main" . -}}{{- end -}}
     </main>
-    <footer class="mt-auto">
+    <footer>
       {{ block "footer" . }}
         <div class="container">
           <div class="row mt-5 py-5">
