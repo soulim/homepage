@@ -34,38 +34,42 @@ Results looked great, but then I discovered that the extension does print stamps
 
 After some research and experimentation, I've ended up with a hack - a proxy function for `History#replaceState` method.
 
-{{< highlight js >}}
-// The extension is activated and this script is executed
-// when the page is reloaded. However GitHub uses PJAX to
-// load and replace just part of the page, so there is no
-// actual page reload happening.
-//
-// Because PJAX is using `History.replaceState` and
-// `History.popState` to manipulate URL and update
-// the page parts, this scripts acts as a proxy
-// for `History.replaceState`. It might look as a hack, but
-// it is the best solution I have found so far.
-var addHistoryStateProxy = function () {
-    var replaceState = history.replaceState;
+{{< figure caption="A proxy function for History#replaceState." >}}
+  {{< highlight js >}}
+  // The extension is activated and this script is executed
+  // when the page is reloaded. However GitHub uses PJAX to
+  // load and replace just part of the page, so there is no
+  // actual page reload happening.
+  //
+  // Because PJAX is using `History.replaceState` and
+  // `History.popState` to manipulate URL and update
+  // the page parts, this scripts acts as a proxy
+  // for `History.replaceState`. It might look as a hack, but
+  // it is the best solution I have found so far.
+  var addHistoryStateProxy = function () {
+      var replaceState = history.replaceState;
 
-    history.replaceState = function () {
-        window.postMessage('lgtm:pageUpdated', '*');
-        return replaceState.apply(this, arguments);
-    };
-};
-{{< /highlight >}}
+      history.replaceState = function () {
+          window.postMessage('lgtm:pageUpdated', '*');
+          return replaceState.apply(this, arguments);
+      };
+  };
+  {{< /highlight >}}
+{{< /figure >}}
 
 The next tricky step was to figure out where and when to add the hack. There is what I decided to do:
 
-{{< highlight js >}}
-// The extension is running in a sandbox, so
-// the `History.replaceState` proxy script must be
-// injected on the page.
-var script = document.createElement('script');
-var parent = document.documentElement;
-script.textContent = '('+ addHistoryStateProxy +')();';
-parent.appendChild(script);
-{{< /highlight >}}
+{{< figure caption="Make use of the proxy function." >}}
+  {{< highlight js >}}
+  // The extension is running in a sandbox, so
+  // the `History.replaceState` proxy script must be
+  // injected on the page.
+  var script = document.createElement('script');
+  var parent = document.documentElement;
+  script.textContent = '('+ addHistoryStateProxy +')();';
+  parent.appendChild(script);
+  {{< /highlight >}}
+{{< /figure >}}
 
 Once I was happy with the extension running in the local browser, it was time to release it. You should [give it a try too](https://chrome.google.com/webstore/detail/lgtm-looks-good-to-me/mbiaidjlljbijjfbeekcocinpfamgkcl).
 

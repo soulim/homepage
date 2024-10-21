@@ -1,0 +1,4 @@
+.highlight pre {
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--bs-border-radius)!important
+}
