@@ -20,12 +20,13 @@
         <div class="container">
           <div class="row py-5">
             <div class="col-md-3">
-              <h1 class="display-6 pb-2">Read next</h1>
+              <h1 class="display-5 pb-2">Read next</h1>
             </div>
             <div class="col-md-6">
               <article>
                 <header>
-                  <h2 class="pb-2"><a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next">{{ .Title }}</a></h2>
+                  <h4><a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next">{{ .Title }}</a></h4>
+                  <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
                 </header>
                 {{ .Summary }}
               </article>
