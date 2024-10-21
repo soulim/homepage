@@ -20,10 +20,9 @@
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   X-Frame-Options: DENY
 
-  # Content Security Policy: load content only from 'self' except YouTube and
-  # Plausible.
+  # Content Security Policy: load content only from 'self' except YouTube.
   # See https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-  Content-Security-Policy: default-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https://plausible.io; font-src 'self'; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data:; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self'; font-src 'self'; frame-src 'self' https://www.youtube-nocookie.com; img-src 'self' data:; manifest-src 'self'; media-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'
 
   # Instruct browsers to send the origin (only) when the protocol security
   # level stays the same (HTTPS -> HTTPS).
