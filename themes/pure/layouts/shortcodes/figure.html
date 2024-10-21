@@ -1,0 +1,9 @@
+{{ $caption := .Get "caption" }}
+<figure class="figure w-100">
+  {{ .Inner }}
+  <figcaption class="figure-caption text-center">
+  {{ if $caption }}
+    {{ $caption }}
+  {{ end }}
+  </figcaption>
+</figure>

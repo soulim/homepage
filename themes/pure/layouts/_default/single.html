@@ -1,17 +1,16 @@
 {{ define "main" }}
-  <div class="container container-post py-3 py-lg-5">
+  <div class="container py-5">
     <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-8">
+      <div class="col-md-6 offset-md-3">
         <article>
           <header>
             <h1 class="display-5 pb-2 border-bottom">{{ .Title }}</h1>
-            <p class="mb-md-5"><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+            <p class="mb-5"><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
           </header>
           {{ .Content }}
         </article>
       </div>
-    </div>
+  </div>
   </div>
 
   {{ $readNext := or .NextInSection .PrevInSection }}
@@ -20,15 +19,14 @@
       <div class="border-top">
         <div class="container">
           <div class="row py-5">
-            <div class="col-md-4">
-              <h1 class="display-6 pb-2 pb-lg-5">Read next</h1>
+            <div class="col-md-3">
+              <h1 class="display-5 pb-2">Read next</h1>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
               <article>
                 <header>
-                  <h2 class="pb-2 pb-md-3"><a href="{{ .RelPermalink }}"
-                                              title="Read '{{ .Title }}'"
-                                              rel="next">{{ .Title }}</a></h2>
+                  <h4><a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next">{{ .Title }}</a></h4>
+                  <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
                 </header>
                 {{ .Summary }}
               </article>
