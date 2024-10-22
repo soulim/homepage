@@ -75,8 +75,8 @@
       {{ block "footer" . }}
         <div class="container text-muted">
           <div class="row my-5">
-            <div class="col-6 offset-3">
-              <p>&copy;&nbsp;{{ now.Format "2006"}} {{ .Site.Copyright }}</p>
+            <div class="col-12 text-center">
+              <p><small>&copy;&nbsp;{{ now.Format "2006"}}, {{ .Site.Copyright }}</small></p>
             </div>
           </div>
         </div>
