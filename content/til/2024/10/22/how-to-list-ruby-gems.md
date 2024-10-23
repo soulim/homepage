@@ -40,3 +40,7 @@ Lesson: if two commands produce similar output, it would be confusing not just w
 ## Credits
 
 Thank you [Pablo Vicente](https://pvcarrera.github.io/) for showing me `bundle show`.
+
+---
+
+{{< til-rating text="good to know" >}}

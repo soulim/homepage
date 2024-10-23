@@ -30,3 +30,7 @@ That makes it possible to [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_you
 
 In the definition above `test` service has exactly the same configuration `dev` and only redefines one environment variable.
 According to [the documentation](https://docs.docker.com/reference/compose-file/services/#finding-referenced-service) it's also possible to include and reuse definitions from other files.
+
+---
+
+{{< til-rating text="good to know" >}}
