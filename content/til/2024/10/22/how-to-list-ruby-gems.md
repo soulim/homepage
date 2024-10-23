@@ -1,7 +1,7 @@
 +++
 title = "How to list Ruby gems in the bundle"
 description = ""
-# cover = "blog/images/social-media/lgtm.cover.png"
+# cover = ""
 date = 2024-10-22
 draft = false
 +++
