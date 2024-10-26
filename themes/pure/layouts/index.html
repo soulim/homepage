@@ -14,11 +14,12 @@
     </div>
   </div>
 </section>
+{{ with .Site.GetPage "/til" }}
 <section>
   <div class="container py-5">
-    <h1 class="display-5 mb-5 pb-2 border-bottom">Recent blog posts</h1>
+    <h1 class="display-5 mb-5 pb-2 border-bottom">Today I learned</h1>
     <div class="row py-3">
-      {{ range first 2 (where site.RegularPages "Type" "in" site.Params.mainSections).ByDate.Reverse }}
+      {{ range first 2 .Pages.ByDate.Reverse }}
         <div class="col-md-6">
           <article>
             <header>
@@ -32,6 +33,27 @@
     </div>
   </div>
 </section>
+{{ end }}
+{{ with .Site.GetPage "/blog" }}
+<section>
+  <div class="container py-5">
+    <h1 class="display-5 mb-5 pb-2 border-bottom">Recent blog posts</h1>
+    <div class="row py-3">
+      {{ range first 2 .Pages.ByDate.Reverse }}
+        <div class="col-md-6">
+          <article>
+            <header>
+              <h4><a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark">{{ .Title }}</a></h4>
+              <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+            </header>
+            {{ .Summary }}
+          </article>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
 <section class="bg-light">
   <div class="container py-5">
     <h1 class="display-5 mb-5 pb-2 border-bottom">Podcast</h1>
