@@ -16,22 +16,22 @@ priority = 0.5
   [[menus.main]]
     title = "Blog"
     name = "Blog"
-    pageRef = "/blog"
+    url = "/blog/"
     weight = 10
   [[menus.main]]
     title = "TIL"
     name = "TIL"
-    pageRef = "/til"
+    url = "/til/"
     weight = 20
   [[menus.main]]
     title = "Now"
     name = "Now"
-    pageRef = "/now"
+    url = "/now/"
     weight = 30
   [[menus.main]]
     title = "RSS"
     name = "RSS"
-    pageRef = "/blog/index.xml"
+    url = "/blog/index.xml"
     weight = 40
 
 [privacy]
