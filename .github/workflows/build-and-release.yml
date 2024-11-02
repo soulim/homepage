@@ -1,0 +1,38 @@
+name: build-and-release
+on: push
+env:
+  HUGO_VERSION: 0.136.5
+jobs:
+  build-and-release:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Set $XDG_BIN_HOME environment variable
+        # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-environment-variable
+        run: |
+          echo "XDG_BIN_HOME=${HOME}/.local/bin" >> "${GITHUB_ENV}"
+      - name: Ensure a directory defined by ${XDG_BIN_HOME} exists
+        # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#adding-a-system-path
+        run: |
+          mkdir -p ${XDG_BIN_HOME}
+          echo "${XDG_BIN_HOME}" >> "${GITHUB_PATH}"
+      - uses: actions/checkout@v4
+      - name: Install Hugo
+        run: |
+          curl --silent \
+               --show-error  \
+               --location  \
+               https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz \
+          | tar --gzip \
+                --extract \
+                --directory=${XDG_BIN_HOME} \
+                hugo
+          hugo version
+      - name: Make a release build
+        run: |
+          make build.zip
+      - if: github.ref == 'refs/heads/master'
+        name: Deploy a release build to Netlify
+        run: |
+          make deploy NETLIFY_ACCESS_TOKEN=${{ secrets.NETLIFY_ACCESS_TOKEN }} \
+                      NETLIFY_WEBSITE=${{ secrets.NETLIFY_WEBSITE }}
+
