@@ -2,11 +2,6 @@
 
 A personal website located at <https://sul.im>.
 
-
-## Contributing
-
-PRs accepted.
-
 ## License
 
-MIT © [Alexander Sulim](https://sul.im/)
+Copyright (c) 2024 [Alexander Sulim](https://sul.im/).
