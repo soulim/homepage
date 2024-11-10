@@ -35,15 +35,14 @@ build.zip: ${SRC_FILES} | ${TMP_DIR}
 
 .PHONY: deploy
 deploy: build.zip
-	wget --quiet \
-	     --no-verbose \
-	     --tries=3 \
-	     --output-document=/dev/null \
-	     --server-response \
-	     --post-file=$< \
+	curl "https://api.netlify.com/api/v1/sites/${NETLIFY_WEBSITE}.netlify.app/deploys" \
+	     --upload-file "$<" \
+	     --request "POST" \
 	     --header "Content-Type: application/zip" \
 	     --header "Authorization: Bearer ${NETLIFY_ACCESS_TOKEN}" \
-	     "https://api.netlify.com/api/v1/sites/${NETLIFY_WEBSITE}.netlify.app/deploys"
+	     --output /dev/null \
+	     --fail \
+	     --show-error
 
 .PHONY: clean
 clean:
