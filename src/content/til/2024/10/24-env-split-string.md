@@ -51,3 +51,7 @@ When executed, the script from above would produce the following output:
   Hello, world.
   {{< /highlight >}}
 {{< /figure >}}
+
+---
+
+{{< til-rating text="good to know" >}}

@@ -105,3 +105,7 @@ All command-line options of the minitest runner are available as well:
       -p, --pride                      Pride. Show your testing pride!
   {{< /highlight >}}
 {{< /figure >}}
+
+---
+
+{{< til-rating text="good to know" >}}
