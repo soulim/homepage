@@ -6,6 +6,17 @@ date = 2024-12-04
 draft = false
 +++
 
+{{< figure caption="Example: Print a version of Node.js managed by asdf." >}}
+  {{< highlight shell >}}
+  $ asdf current nodejs 2>&1 | sed -e "s/ \{2,\}/ /g" | cut -d" " -f2
+  20.17.0
+  {{< /highlight >}}
+{{< /figure >}}
+
+<!--more-->
+
+## Context
+
 The following command prints a tool version managed by [asdf][1]:
 
 {{< figure caption="Print a version of Go managed by asdf." >}}
@@ -17,7 +28,6 @@ The following command prints a tool version managed by [asdf][1]:
 
 Unfortunately there's no way to get only the version. However that could be achieved with additional output manipulation.
 
-<!--more-->
 
 Using [sed][2] and [cut][3] commands a version of given tool could be extracted using the following pipeline:
 
@@ -53,16 +63,7 @@ The final version of the one-liner looks like this:
   {{< /highlight >}}
 {{< /figure >}}
 
-Usage example:
-
-{{< figure caption="Print a version of Node.js managed by asdf." >}}
-  {{< highlight shell >}}
-  $ asdf current nodejs 2>&1 \
-    | sed -e "s/ \{2,\}/ /g" \
-    | cut -d" " -f2
-  20.17.0
-  {{< /highlight >}}
-{{< /figure >}}
+**UPDATE:** There's [a way]({{< relref "05-asdf-get-tool-version-improved.md" >}}) to replace _sed_ and _cut_ with _awk_ to simplify the solution.
 
 ---
 
