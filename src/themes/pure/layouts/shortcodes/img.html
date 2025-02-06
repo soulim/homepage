@@ -1,5 +1,0 @@
-{{ $image := resources.Get (.Get "src")
-             | resources.Fingerprint "sha512" }}
-{{ $alt := .Get "alt" }}
-
-<img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="img-fluid">
