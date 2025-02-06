@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := all
 
-SRC_DIR = ${PWD}/src
+SRC_DIR = ${PWD}
 TMP_DIR = ${PWD}/tmp
 
 SRC_FILES = $(shell find ${SRC_DIR} -type "f")
