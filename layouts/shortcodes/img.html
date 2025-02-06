@@ -1,0 +1,13 @@
+{{ $url := urls.Parse (.Get "src") }}
+{{ $src := $url.String }}
+{{ if not $url.IsAbs }}
+  {{ with or (.Page.Resources.Get $url.Path) (resources.Get $url.Path) }}
+    {{ with . | resources.Fingerprint "sha512" }}
+      {{ $src = .RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $alt := .Get "alt" }}
+
+<img src="{{ $src }}" alt="{{ $alt }}" class="img-fluid">
