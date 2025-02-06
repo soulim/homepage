@@ -6,7 +6,7 @@ date = 2024-11-11
 draft = false
 +++
 
-When it's about writing tests for a Ruby project, I prefer [minitest](https://github.com/minitest/minitest) to anything else. It's fast and doesn't require to switch mental context to any domain-specific language (DSL). It's just Ruby.
+When it's about writing tests for a Ruby project, I prefer [minitest][1] to anything else. It's fast and doesn't require to switch mental context to any domain-specific language (DSL). It's just Ruby.
 
 Because minitest allows to express tests using plain Ruby, Ruby is the only necessary tool to run those tests.
 
@@ -18,7 +18,7 @@ Because minitest allows to express tests using plain Ruby, Ruby is the only nece
 
 That works fine for one file, but a bit tricky for multiple test files at once.
 
-minitest comes with [a Rake task](https://github.com/minitest/minitest?tab=readme-ov-file#label-Rake+Tasks) to run all tests. However for small projects it might be to much to bring Rake just for that case.
+minitest comes with [a Rake task][2] to run all tests. However for small projects it might be to much to bring Rake just for that case.
 
 So I wrote a script to run tests without anything but Ruby. It's basically a wrapper around a test runner that comes with minitest.
 
@@ -109,3 +109,7 @@ All command-line options of the minitest runner are available as well:
 ---
 
 {{< til-rating text="good to know" >}}
+
+
+[1]: https://github.com/minitest/minitest
+[2]: https://github.com/minitest/minitest?tab=readme-ov-file#label-Rake+Tasks

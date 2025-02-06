@@ -1,18 +1,24 @@
 +++
 title = "AWS Lambda or Amazon Lambda?"
-description = "A tool to automatically check correctness of AWS service names in prose."
+description = """\
+  A tool to automatically check correctness of AWS service names in prose.\
+  """
 cover = "aws-or-amazon.cover.png"
 date = 2020-09-12
 draft = false
 +++
 
-As a cloud platform [Amazon Web Services][aws] (AWS) offers over 175 services. If you pay attention, you'll notice that people often do mistakes in the names of these services. For example they say *Amazon* Lambda instead of [*AWS* Lambda][lambda], or *AWS* DynamoDB instead of [*Amazon* DynamoDB][dynamodb].
+As a cloud platform [Amazon Web Services][aws] (AWS) offers over 175 services.
+If you pay attention, you'll notice that people often do mistakes in the names of these services.
+For example they say *Amazon* Lambda instead of [*AWS* Lambda][lambda], or *AWS* DynamoDB instead of [*Amazon* DynamoDB][dynamodb].
 
-While it's important to use correct names and terms, it's also hard or at least tricky sometimes. I've created a little tool to help with that and made it open source.
+While it's important to use correct names and terms, it's also hard or at least tricky sometimes.
+I've created a little tool to help with that and made it open source.
 
 <!--more-->
 
-The tool is an extension for prose linter called [Vale][vale]. If you work with text, this linter is *highly* recommended.
+The tool is an extension for prose linter called [Vale][vale].
+If you work with text, this linter is *highly* recommended.
 
 ## Some details about Vale
 
@@ -22,13 +28,17 @@ Unlike most writing-related software, Vale's primary purpose isn't to provide it
 
 Vale uses a plain-text (INI and YAML) configuration system that makes it possible to share configurations across platforms, applications, and users.
 
-And the best of all Vale is open source. That means you have a chance not just to look into well-written code (Go), but also contribute :wink:
+And the best of all Vale is open source.
+That means you have a chance not just to look into well-written code (Go), but also contribute :wink:
 
 ## A little challenge
 
-To extend Vale it's necessary to craft a configuration file. A [`substitution` style][vale-substitution] helps to achieve this goal because then the linter *suggests* correct options and not just complains about mistakes.
+To extend Vale it's necessary to craft a configuration file.
+A [`substitution` style][vale-substitution] helps to achieve this goal because then the linter *suggests* correct options and not just complains about mistakes.
 
-Turns out it isn't easy to find a list of all AWS services in a machine-readable format. Also, it MUST include correct names. [@juanibiapina](https://github.com/juanibiapina) suggested a brilliant idea to use [the AWS status page][aws-status] :bulb:
+Turns out it isn't easy to find a list of all AWS services in a machine-readable format.
+Also, it MUST include correct names.
+[@juanibiapina](https://github.com/juanibiapina) suggested a brilliant idea to use [the AWS status page][aws-status] :bulb:
 
 ## A small discovery
 
@@ -36,9 +46,13 @@ The phase of testing and polishing the substitution style revealed a fact, that 
 
 ## Results
 
-{{< img src="screenshot-aws-vale-demo-output.png" alt="Screenshot: AWS Vale demo output" >}}
+{{< figure caption="AWS Vale demo output" >}}
+  {{< img src="screenshot-aws-vale-demo-output.png" alt="Screenshot: AWS Vale demo output" >}}
+{{< /figure >}}
 
-You can find [AWS style for Vale on GitHub][vale-aws]. Grab the latest release if you aren't interested in technical details.
+
+You can find [AWS style for Vale on GitHub][vale-aws].
+Grab the latest release if you aren't interested in technical details.
 
 ## Bonus
 
