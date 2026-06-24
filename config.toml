@@ -1,6 +1,6 @@
 baseURL = "https://sul.im/"
 copyright = "Alexander Sulim"
-languageCode = "en-US"
+locale = "en-US"
 title = "Alexander Sulim"
 enableEmoji = true
 # ignoreErrors = ["error-remote-getjson"]     # Ignore error in offline mode
@@ -31,7 +31,7 @@ priority = 0.5
     weight = 40
 
 [privacy]
-  [privacy.twitter]
+  [privacy.x]
     disable = false
     enableDNT = true
     simple = true
@@ -60,4 +60,3 @@ priority = 0.5
                                 style-src 'self' 'unsafe-inline'; \
                                 frame-ancestors 'none'\
                                 """
-
