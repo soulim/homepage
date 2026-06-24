@@ -1,4 +1,77 @@
+/* iA Writer Duo Regular */
+@font-face {
+  font-family: "iA Writer Duo";
+  {{ $font := resources.Get "fonts/iAWriterDuoS-Regular.eot" | resources.Fingerprint "sha512" -}}
+  src: url("{{ $font.RelPermalink }}");
+  src:
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Regular.eot" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("embedded-opentype"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Regular.woff2" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff2"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Regular.woff" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* iA Writer Duo Italic */
+@font-face {
+  font-family: "iA Writer Duo";
+  {{ $font := resources.Get "fonts/iAWriterDuoS-Italic.eot" | resources.Fingerprint "sha512" -}}
+  src: url("{{ $font.RelPermalink }}");
+  src:
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Italic.eot" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("embedded-opentype"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Italic.woff2" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff2"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Italic.woff" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+/* iA Writer Duo Bold */
+@font-face {
+  font-family: "iA Writer Duo";
+  {{ $font := resources.Get "fonts/iAWriterDuoS-Bold.eot" | resources.Fingerprint "sha512" -}}
+  src: url("{{ $font.RelPermalink }}");
+  src:
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Bold.eot" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("embedded-opentype"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Bold.woff2" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff2"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-Bold.woff" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+/* iA Writer Duo BoldItalic */
+@font-face {
+  font-family: "iA Writer Duo";
+  {{ $font := resources.Get "fonts/iAWriterDuoS-BoldItalic.eot" | resources.Fingerprint "sha512" -}}
+  src: url("{{ $font.RelPermalink }}");
+  src:
+    {{ $font := resources.Get "fonts/iAWriterDuoS-BoldItalic.eot" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("embedded-opentype"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-BoldItalic.woff2" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff2"),
+
+    {{ $font := resources.Get "fonts/iAWriterDuoS-BoldItalic.woff" | resources.Fingerprint "sha512" -}}
+    url("{{ $font.RelPermalink }}") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+:root {
+  --pico-font-family: "iA Writer Duo";
+}
+
 .highlight pre {
   padding: 1.25rem 1.75rem;
-  border-radius: var(--bs-border-radius)!important
+  border-radius: var(--bs-border-radius) !important;
 }
