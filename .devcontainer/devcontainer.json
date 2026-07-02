@@ -1,0 +1,8 @@
+{
+  "name": "${containerWorkspaceFolderBasename}",
+  "build": {
+    "dockerfile": "Containerfile",
+  },
+  "remoteUser": "devcontainer",
+  "forwardPorts": [1313],
+}

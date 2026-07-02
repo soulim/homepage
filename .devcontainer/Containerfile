@@ -1,0 +1,50 @@
+FROM debian:trixie
+RUN set -eux \
+    && apt update \
+    && apt install --yes --no-install-recommends \
+                   ca-certificates \
+                   curl \
+                   xz-utils \
+    && apt dist-clean
+
+ENV NODE_VERSION=24.18.0
+
+RUN set -eux \
+    && ARCH= \
+    && dpkgArch="$(dpkg --print-architecture)" \
+    && case "${dpkgArch##*-}" in \
+         amd64) ARCH='x64';; \
+         ppc64el) ARCH='ppc64le';; \
+         s390x) ARCH='s390x';; \
+         arm64) ARCH='arm64';; \
+         armhf) ARCH='armv7l';; \
+         *) echo "unsupported architecture"; exit 1 ;; \
+      esac \
+    && curl -fsSLO --compressed "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-${ARCH}.tar.xz" \
+    && tar -xJf "node-v${NODE_VERSION}-linux-${ARCH}.tar.xz" --directory=/usr/local --strip-components=1 --no-same-owner \
+    && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
+    && node --version \
+    && npm --version \
+    && rm -rf /tmp/*
+
+ENV HUGO_VERSION=0.163.3
+
+RUN set -eux \
+    && ARCH= \
+    && dpkgArch="$(dpkg --print-architecture)" \
+    && case "${dpkgArch##*-}" in \
+         amd64) ARCH='amd64';; \
+         arm64) ARCH='arm64';; \
+         armhf) ARCH='arm';; \
+         *) echo "unsupported architecture"; exit 1 ;; \
+      esac \
+    && curl -fsSLO --compressed "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-${ARCH}.tar.gz" \
+    && tar -xzf "./hugo_${HUGO_VERSION}_linux-${ARCH}.tar.gz" --directory=/usr/local/bin --no-same-owner \
+    && hugo version \
+    && rm -rf /tmp/* "./hugo_${HUGO_VERSION}_linux-${ARCH}"
+
+RUN set -eux \
+    && groupadd --gid 1000 devcontainer \
+    && useradd --uid 1000 --gid devcontainer --shell /bin/bash --create-home devcontainer
+
+USER devcontainer
