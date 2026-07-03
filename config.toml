@@ -60,3 +60,7 @@ priority = 0.5
                                 style-src 'self' 'unsafe-inline'; \
                                 frame-ancestors 'none'\
                                 """
+
+[build]
+  [build.buildStats]
+    enable = true
