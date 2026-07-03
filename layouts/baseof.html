@@ -48,14 +48,14 @@
   <body>
     <header>
       {{ block "header" . }}
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
           <div class="container">
             <a class="navbar-brand" href="{{ "/" | relURL }}" title="Return to the homepage">Alexander Sulim</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar-nav">
-              <ul class="navbar-nav nav-underline ms-auto">
+              <ul class="navbar-nav me-auto">
                 {{ $currentPage := . }}
                 {{ range site.Menus.main }}
                   <li class="nav-item">
@@ -88,7 +88,8 @@
         </div>
       {{ end }}
     </footer>
-    {{ $javascript := resources.Get "javascript/bootstrap.v5.3.3.min.js"
+    {{ $javascript := resources.Get "javascripts/bootstrap.js"
+                      | minify
                       | resources.Fingerprint "sha512" -}}
     <script defer src="{{ $javascript.RelPermalink }}" integrity="{{ $javascript.Data.Integrity }}"></script>
   </body>

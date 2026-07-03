@@ -3,6 +3,7 @@
 bin/
 node_modules/
 public/
+resources/
 tmp/
 build.zip
 hugo_stats.json
