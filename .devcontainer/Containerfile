@@ -44,7 +44,7 @@ RUN set -eux \
     && rm -rf /tmp/* "./hugo_${HUGO_VERSION}_linux-${ARCH}"
 
 RUN set -eux \
-    && groupadd --gid 1000 devcontainer \
-    && useradd --uid 1000 --gid devcontainer --shell /bin/bash --create-home devcontainer
+    && groupadd --gid 1000 dev \
+    && useradd --uid 1000 --gid dev --shell /bin/bash --create-home dev
 
-USER devcontainer
+USER dev
