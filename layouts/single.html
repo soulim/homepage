@@ -1,39 +1,34 @@
 {{ define "main" }}
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <article>
-          <header>
-            <h1 class="display-5 pb-2 border-bottom">{{ .Title }}</h1>
-            <p class="mb-5"><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
-          </header>
-          {{ .Content }}
-        </article>
-      </div>
-  </div>
-  </div>
+<section class="container col-md-6 py-5">
+  <article>
+    <header>
+      <h1 class="display-5 pb-2 border-bottom">{{ .Title }}</h1>
+      <p class="mb-5">
+        <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </p>
+    </header>
+    {{ .Content }}
+  </article>
+</section>
 
-  {{ $readNext := or .NextInSection .PrevInSection }}
-  {{ if $readNext }}
-    {{ with $readNext }}
-      <div class="border-top">
-        <div class="container">
-          <div class="row py-5">
-            <div class="col-md-3">
-              <h1 class="display-5 pb-2">Read next</h1>
-            </div>
-            <div class="col-md-6">
-              <article>
-                <header>
-                  <h4><a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next">{{ .Title }}</a></h4>
-                  <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
-                </header>
-                {{ .Summary }}
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{ end }}
-  {{ end }}
-{{ end }}
+{{ $readNext := or .NextInSection .PrevInSection }} {{ if $readNext }} {{ with
+$readNext }}
+<div class="bg-light">
+  <section class="container col-md-6 py-5">
+    <header class="display-5 pb-5">Read next</header>
+    <article>
+      <header>
+        <h4>
+          <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next"
+            >{{ .Title }}</a
+          >
+        </h4>
+        <p>
+          <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </p>
+      </header>
+      {{ .Summary }}
+    </article>
+  </section>
+</div>
+{{ end }} {{ end }} {{ end }}
