@@ -1,5 +1,16 @@
 {
   "name": "homepage",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.18.0",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "onFail": "error"
+    }
+  },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "autoprefixer": "^10.5.2",
