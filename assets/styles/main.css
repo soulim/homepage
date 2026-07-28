@@ -1,4 +1,42 @@
+{{- $font := resources.Get "fonts/iAWriterDuoS-Regular.woff2" | fingerprint "sha512" -}}
+@font-face {
+  font-family: "iA Writer Duo S";
+  src: url("{{ $font.RelPermalink }}") format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+{{- $font := resources.Get "fonts/iAWriterDuoS-Italic.woff2" | fingerprint "sha512" -}}
+@font-face {
+  font-family: "iA Writer Duo S";
+  src: url("{{ $font.RelPermalink }}") format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+}
+{{- $font := resources.Get "fonts/iAWriterDuoS-Bold.woff2" | fingerprint "sha512" -}}
+@font-face {
+  font-family: "iA Writer Duo S";
+  src: url("{{ $font.RelPermalink }}") format('woff2');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --font-ia-writer-duo: "iA Writer Duo S"
+}
+
+body {
+  font-family: var(--font-ia-writer-duo, --bs-body-font-family) !important;
+}
+
 .highlight pre {
   padding: 1.25rem 1.75rem;
   border-radius: var(--bs-border-radius) !important;
+}
+
+.navbar-brand,
+.offcanvas-title {
+  font-weight: bold;
 }
