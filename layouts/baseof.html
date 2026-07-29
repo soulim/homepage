@@ -10,9 +10,25 @@
     <meta name="referrer" content="always" />
     {{ partial "opengraph.html" . -}}
     {{ partial "twitter_card.html" . -}}
-    {{ $style := resources.Get "styles/pico.min.css"
-                 | resources.Fingerprint "sha512" -}}
-    <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
+    {{ $style := resources.Get "styles/bootstrap.css" -}}
+    {{ if hugo.IsDevelopment -}}
+      <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ else -}}
+      {{ $style = $style | postCSS | minify | fingerprint "sha512" | resources.PostProcess -}}
+      <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+    {{ end -}}
+    {{ $style := resources.Get "styles/main.css"
+                 | resources.ExecuteAsTemplate "main.css" . -}}
+    {{ if hugo.IsDevelopment -}}
+      <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ else -}}
+      {{ $style = $style | postCSS | minify | fingerprint "sha512" | resources.PostProcess -}}
+      <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+    {{ end -}}
     {{ $image := resources.Get "images/apple-touch-icon.png"
                  | resources.Fingerprint "sha512" -}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $image.RelPermalink }}" integrity="{{ $image.Data.Integrity }}">
@@ -26,58 +42,57 @@
                        | resources.ExecuteAsTemplate "site.webmanifest" .
                        | resources.Fingerprint "sha512" -}}
     <link rel="manifest" href="{{ $webmanifest.RelPermalink }}" integrity="{{ $webmanifest.Data.Integrity }}">
-    <link href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="stylesheet">
-    {{ $style := resources.Get "styles/main.css"
-                 | resources.ExecuteAsTemplate "main.css" .
-                 | resources.Fingerprint "sha512" -}}
-    <link href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="stylesheet">
     <link rel="alternate" type="application/rss+xml" href="{{ "/blog/index.xml" | absURL }}" title="{{ $.Site.Title }}" />
     <link rel="canonical" href="{{ .Permalink }}">
   </head>
   <body>
-    <!-- header>
-      {{ block "header" . }}
-        <nav class="navbar navbar-expand-md">
-          <div class="container">
-            <a class="navbar-brand" href="{{ "/" | relURL }}" title="Return to the homepage">Alexander Sulim</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar-nav">
-              <ul class="navbar-nav nav-underline ms-auto">
+    {{ block "header" . }}
+      <nav class="navbar navbar-expand-md bg-light sticky-top border-bottom">
+        <section class="container col-md-6">
+          <a class="navbar-brand" href="{{ "/" | relURL }}" title="Return to the homepage">Alexander Sulim</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasLabel">Alexander Sulim</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ "/" | relURL }}">Home</a>
+                </li>
                 {{ $currentPage := . }}
                 {{ range site.Menus.main }}
-                  <li class="nav-item">
+                <li class="nav-item">
                   {{ if $currentPage.IsMenuCurrent .Menu . }}
-                    <a class="nav-link active" aria-current="page" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
+                    <a class="nav-link active" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
                   {{ else if $currentPage.HasMenuCurrent .Menu . }}
-                    <a class="nav-link active" aria-current="page" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
+                    <a class="nav-link active" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
                   {{ else }}
                     <a class="nav-link" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
                   {{ end }}
-                  </li>
+                </li>
                 {{ end }}
               </ul>
             </div>
           </div>
-        </nav>
-      {{ end }}
-    </header -->
-    <main class="container">
+        </section>
+      </nav>
+    {{ end }}
+    <main>
       {{- block "main" . -}}{{- end -}}
     </main>
     <footer>
       {{ block "footer" . }}
-        <div class="container text-muted">
-          <div class="row my-5">
-            <div class="col-12 text-center">
-              <p><small>&copy;&nbsp;{{ now.Format "2006"}}, {{ .Site.Copyright }}</small></p>
-            </div>
-          </div>
-        </div>
+        <section class="container text-muted text-center my-5">
+          <p><small>&copy;&nbsp;{{ now.Format "2006"}}, {{ .Site.Copyright }}</small></p>
+        </section>
       {{ end }}
     </footer>
-    {{ $javascript := resources.Get "javascript/bootstrap.v5.3.3.min.js"
+    {{ $javascript := resources.Get "javascripts/bootstrap.js"
+                      | minify
                       | resources.Fingerprint "sha512" -}}
     <script defer src="{{ $javascript.RelPermalink }}" integrity="{{ $javascript.Data.Integrity }}"></script>
   </body>

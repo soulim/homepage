@@ -1,7 +1,9 @@
 .DS_Store
 .hugo_build.lock
 bin/
-online.log
+node_modules/
 public/
+resources/
 tmp/
 build.zip
+hugo_stats.json
