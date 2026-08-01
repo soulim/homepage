@@ -1,19 +1,21 @@
 {{ define "main" }}
 <section class="container col-md-6 py-5">
-  <header class="display-1 pb-2">{{ .Title }}</header>
+  <header>
+    <h1 class="display-1 pb-2">{{ .Title }}</h1>
+  </header>
   <div class="lead">{{ .Content }}</div>
 </section>
 {{ with .Site.GetPage "/til" }}
-<section class="container col-md-6 py-5">
-  <header class="display-5 mb-5 pb-2 border-bottom">Today I learned</header>
+<section class="container col-md-6 --py-5">
+  <header class="pb-2 border-bottom">
+    <h2>Today I Learned</h2>
+  </header>
   {{ range first 2 .Pages.ByDate.Reverse }}
-  <article class="pb-2">
+  <article class="my-5">
     <header>
-      <h4>
-        <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark"
-          >{{ .Title }}</a
-        >
-      </h4>
+      <h3>
+        <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark">{{ .Title }}</a>
+      </h3>
       <p>
         <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
       </p>
@@ -23,15 +25,15 @@
   {{ end }}
 </section>
 {{ end }} {{ with .Site.GetPage "/blog" }}
-<section class="container col-md-6 py-5">
-  <header class="display-5 mb-5 pb-2 border-bottom">Recent blog posts</header>
+<section class="container col-md-6 --py-5">
+  <header class="pb-2 border-bottom">
+    <h2>Recent blog posts</h2>
+  </header>
   {{ range first 2 .Pages.ByDate.Reverse }}
-  <article>
+  <article class="my-5">
     <header>
       <h4>
-        <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark"
-          >{{ .Title }}</a
-        >
+        <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark">{{ .Title }}</a>
       </h4>
       <p>
         <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
@@ -44,7 +46,6 @@
 {{ end }}
 <div class="bg-light">
   <section class="container col-md-6 py-5">
-    <header class="display-5 mb-5 pb-2">Podcast</header>
     <div class="row align-items-center">
       <div class="col-md-2">
         {{ $image := resources.Get "images/codeandbeyond@800x800.png" |
@@ -58,7 +59,7 @@
         /></a>
       </div>
       <div class="col-md-9 offset-md-1">
-        <h4>Code && Beyond</h4>
+        <h2>Code && Beyond</h2>
         <p>
           A discontinued podcast with my friend Pablo and me, two software
           engineers with more than 35 years of professional experience combined.
@@ -76,8 +77,10 @@
   </section>
 </div>
 <section class="container col-md-6 py-5">
-    <header class="display-6 mb-5 pb-2 border-bottom">Contact options</header>
-    <div class="row">
+    <header class="pb-2 border-bottom">
+      <h2>Contact options</h2>
+    </header>
+    <div class="row my-5">
       <div class="col-md-4 d-flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"

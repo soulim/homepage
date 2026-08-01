@@ -5,7 +5,11 @@ const purgecss = purgeCSSPlugin({
   content: ["./hugo_stats.json"],
   defaultExtractor: (content) => {
     const els = JSON.parse(content).htmlElements;
-    return [...(els.tags || []), ...(els.classes || []), ...(els.ids || [])];
+    return [
+      ...(els.tags || []),
+      ...(els.classes || []),
+      ...(els.ids || []),
+    ];
   },
   // https://purgecss.com/safelisting.html
   safelist: [],

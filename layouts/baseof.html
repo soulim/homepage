@@ -10,25 +10,25 @@
     <meta name="referrer" content="always" />
     {{ partial "opengraph.html" . -}}
     {{ partial "twitter_card.html" . -}}
-    {{ $style := resources.Get "styles/bootstrap.css" -}}
-    {{ if hugo.IsDevelopment -}}
-      <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
-      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-    {{ else -}}
-      {{ $style = $style | postCSS | minify | fingerprint "sha512" | resources.PostProcess -}}
-      <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
-      <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
-    {{ end -}}
-    {{ $style := resources.Get "styles/main.css"
-                 | resources.ExecuteAsTemplate "main.css" . -}}
-    {{ if hugo.IsDevelopment -}}
-      <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
-      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-    {{ else -}}
-      {{ $style = $style | postCSS | minify | fingerprint "sha512" | resources.PostProcess -}}
-      <link rel="preload" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" as="style">
-      <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
-    {{ end -}}
+    {{ with resources.Get "styles/bootstrap.css" }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
+      {{ else }}
+        {{ with . | minify | fingerprint "sha512" }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ with resources.Get "styles/main.css" }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
+      {{ else }}
+        {{ with . | minify | fingerprint "sha512" }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
     {{ $image := resources.Get "images/apple-touch-icon.png"
                  | resources.Fingerprint "sha512" -}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $image.RelPermalink }}" integrity="{{ $image.Data.Integrity }}">
@@ -49,7 +49,7 @@
     {{ block "header" . }}
       <nav class="navbar navbar-expand-md bg-light sticky-top border-bottom">
         <section class="container col-md-6">
-          <a class="navbar-brand" href="{{ "/" | relURL }}" title="Return to the homepage">Alexander Sulim</a>
+          <span class="navbar-brand">Alexander Sulim</span>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

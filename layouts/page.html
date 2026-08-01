@@ -2,7 +2,7 @@
 <section class="container col-md-6 py-5">
   <article>
     <header>
-      <h1 class="display-5 pb-2 border-bottom">{{ .Title }}</h1>
+      <h1 class="pb-2 border-bottom">{{ .Title }}</h1>
       <p class="mb-5">
         <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
       </p>
@@ -15,14 +15,16 @@
 $readNext }}
 <div class="bg-light">
   <section class="container col-md-6 py-5">
-    <header class="display-5 pb-5">Read next</header>
+    <header>
+      <h1 class="pb-5">Read</h1>
+    </header>
     <article>
       <header>
-        <h4>
+        <h2>
           <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next"
             >{{ .Title }}</a
           >
-        </h4>
+        </h2>
         <p>
           <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
         </p>

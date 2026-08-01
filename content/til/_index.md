@@ -9,4 +9,4 @@ changefreq = "weekly"
 priority = 0.6
 +++
 
-A collection of a bite-size knowledge pieces.
+_Today I learned_ or simply _TIL_ is a collection of a bite-size knowledge pieces.

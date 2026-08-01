@@ -10,14 +10,14 @@ priority = 0.5
 
 [menus]
   [[menus.main]]
-    title = "Blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 10
-  [[menus.main]]
     title = "TIL"
     name = "TIL"
     url = "/til/"
+    weight = 10
+  [[menus.main]]
+    title = "Blog"
+    name = "Blog"
+    url = "/blog/"
     weight = 20
   [[menus.main]]
     title = "Now"
@@ -25,10 +25,15 @@ priority = 0.5
     url = "/now/"
     weight = 30
   [[menus.main]]
-    title = "RSS"
-    name = "RSS"
-    url = "/blog/index.xml"
+    title = "About"
+    name = "About"
+    url = "/about/"
     weight = 40
+  # [[menus.main]]
+  #   title = "RSS"
+  #   name = "RSS"
+  #   url = "/blog/index.xml"
+  #   weight = 50
 
 [privacy]
   [privacy.x]
