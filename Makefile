@@ -14,7 +14,7 @@ all: release
 .PHONY: release
 release: ${SRC_FILES} | ${TMP_DIR}
 	dst_dir=$$(mktemp -p ${TMP_DIR} -d dst.XXXXXXXXXX) \
-	&& ${HUGO} build --source ${SRC_DIR} \
+	&& hugo build --source ${SRC_DIR} \
 	                 --destination $${dst_dir} \
 	                 --environment production \
 	                 --gc \
