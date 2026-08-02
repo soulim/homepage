@@ -10,25 +10,30 @@ priority = 0.5
 
 [menus]
   [[menus.main]]
-    title = "TIL"
-    name = "TIL"
-    url = "/til/"
+    title = "home"
+    name = "Home"
+    pageRef = '/'
     weight = 10
   [[menus.main]]
-    title = "Blog"
-    name = "Blog"
-    url = "/blog/"
+    title = "TIL"
+    name = "TIL"
+    pageRef = '/til'
     weight = 20
   [[menus.main]]
-    title = "Now"
-    name = "Now"
-    url = "/now/"
+    title = "blog"
+    name = "Blog"
+    pageRef = "/blog"
     weight = 30
   [[menus.main]]
-    title = "About"
-    name = "About"
-    url = "/about/"
+    title = "now"
+    name = "Now"
+    pageRef = "/now"
     weight = 40
+  [[menus.main]]
+    title = "about"
+    name = "About"
+    pageRef = "/about"
+    weight = 50
   # [[menus.main]]
   #   title = "RSS"
   #   name = "RSS"

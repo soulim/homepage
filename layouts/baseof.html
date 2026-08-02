@@ -49,7 +49,7 @@
     {{ block "header" . }}
       <nav class="navbar navbar-expand-md bg-light sticky-top border-bottom">
         <section class="container col-md-6">
-          <span class="navbar-brand">Alexander Sulim</span>
+          <span class="navbar-brand h1 mb-0">Alexander Sulim</span>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -60,20 +60,14 @@
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ "/" | relURL }}">Home</a>
-                </li>
-                {{ $currentPage := . }}
                 {{ range site.Menus.main }}
-                <li class="nav-item">
-                  {{ if $currentPage.IsMenuCurrent .Menu . }}
-                    <a class="nav-link active" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
-                  {{ else if $currentPage.HasMenuCurrent .Menu . }}
-                    <a class="nav-link active" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
-                  {{ else }}
-                    <a class="nav-link" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
-                  {{ end }}
-                </li>
+                  <li class="nav-item">
+                    {{ if $.IsMenuCurrent .Menu . }}
+                      <a class="nav-link active" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
+                    {{ else }}
+                      <a class="nav-link" href="{{ .URL | relURL }}" title="Visit '{{ .Title }}'">{{ .Name }}</a>
+                    {{ end }}
+                  </li>
                 {{ end }}
               </ul>
             </div>
