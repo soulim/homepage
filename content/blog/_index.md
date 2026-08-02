@@ -9,4 +9,4 @@ changefreq = "weekly"
 priority = 0.6
 +++
 
-Follow updates in this section via [RSS](/blog/index.xml).
+Follow the blog updates via [RSS](/blog/index.xml).
