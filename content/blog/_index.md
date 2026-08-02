@@ -1,6 +1,6 @@
 +++
 title = "Blog"
-description = "A software engineer building the web professionally for the last fifteen years, recently focused on backend challenges at Babbel."
+description = "A software engineer working professionally for more than twenty years, recently focused on backend challenges at Babbel."
 date = 2021-05-07
 draft = false
 
@@ -8,3 +8,5 @@ draft = false
 changefreq = "weekly"
 priority = 0.6
 +++
+
+Follow updates in this section via [RSS](/blog/index.xml).

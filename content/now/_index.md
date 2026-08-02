@@ -11,4 +11,4 @@ priority = 0.4
 
 _This is a "now page" which lists the work and other priorities that I'm focusing on now. It's inspired by an idea from [Derek Sivers](https://sivers.org/now)._
 
-Besides being busy at work, I'm working on a tool that helps me to organize media files. The project is called _memorabilia_.
+I'm working on a tool that helps organizing media files. The project is called _memorabilia_.
