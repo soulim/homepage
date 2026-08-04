@@ -1,4 +1,10 @@
-<dl class="row">
-  <dt class="col-2">TIL rating:</dt>
-  <dd class="col-10">{{ .Get "text" }}</dd>
-</dl>
+<div class="card my-5">
+  <ul class="list-group list-group-flush">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      TIL Rating
+      <span class="badge text-bg-primary rounded-pill">{{ .Get "text" }}</span>
+    </li>
+  </ul>
+</div>

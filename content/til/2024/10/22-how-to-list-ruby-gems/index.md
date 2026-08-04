@@ -32,7 +32,7 @@ Then due to a mistake that another command was marked for deprecation.
 After an attempt to "fix" the deprecation confusion, it was decided to keep both commands.
 
 {{< figure caption="A short competition story." >}}
-  {{< img src="screenshot.png" >}}
+{{< img src="screenshot.png" >}}
 {{< /figure >}}
 
 Lesson: if two commands produce similar output, it would be confusing not just when you use these commands, but also when you maintain them as an author.
@@ -41,10 +41,7 @@ Lesson: if two commands produce similar output, it would be confusing not just w
 
 Thank you [Pablo Vicente][4] for showing me `bundle show`.
 
----
-
 {{< til-rating text="good to know" >}}
-
 
 [1]: https://bundler.io/v2.5/man/bundle-show.1.html
 [2]: https://bundler.io/v2.5/man/bundle-list.1.html
