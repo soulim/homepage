@@ -9,8 +9,8 @@ changefreq = "monthly"
 priority = 0.4
 +++
 
-I'm Alexander, currently a principal engineer at [Babbel](https://babbel.com).
-Some time ago I created a job board for Ruby engineers and even got selected as a nominee for [Ruby Prize Award](http://www.ruby.or.jp/en/news/20160927.html) in 2016.
+I'm Alexander, a principal engineer at [Babbel](https://babbel.com) since 2018.
+Some time ago I created a free and open source job board for Ruby engineers and got selected as a nominee for [Ruby Prize Award](http://www.ruby.or.jp/en/news/20160927.html) in 2016.
 
 You can follow me:
 
