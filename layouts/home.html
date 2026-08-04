@@ -6,12 +6,13 @@
   <div class="lead">{{ .Content }}</div>
 </section>
 {{ with .Site.GetPage "/til" }}
-<section class="container col-md-6 --py-5">
-  <header class="pb-2 border-bottom">
+<div class="bg-light">
+<section class="container col-md-6 py-5">
+  <header class="pb-5 --border-bottom">
     <h2>Today I Learned</h2>
   </header>
-  {{ range first 2 .Pages.ByDate.Reverse }}
-  <article class="my-5">
+  {{ range first 1 .Pages.ByDate.Reverse }}
+  <article class="--my-5">
     <header>
       <h3>
         <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark">{{ .Title }}</a>
@@ -24,8 +25,10 @@
   </article>
   {{ end }}
 </section>
-{{ end }} {{ with .Site.GetPage "/blog" }}
-<section class="container col-md-6 --py-5">
+</div>
+{{ end }}
+{{ with .Site.GetPage "/blog" }}
+<section class="container col-md-6 py-5">
   <header class="pb-2 border-bottom">
     <h2>Recent blog posts</h2>
   </header>
@@ -48,8 +51,7 @@
   <section class="container col-md-6 py-5">
     <div class="row align-items-center">
       <div class="col-md-2">
-        {{ $image := resources.Get "images/codeandbeyond@800x800.png" |
-        resources.Fingerprint "sha512" -}}
+        {{ $image := resources.Get "images/codeandbeyond@800x800.png" | resources.Fingerprint "sha512" -}}
         <a href="https://codeandbeyond.rocks/"
           ><img
             src="{{ $image.RelPermalink }}"

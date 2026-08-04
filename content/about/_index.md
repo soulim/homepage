@@ -19,3 +19,10 @@ You can follow me:
 - [RSS](/blog/index.xml)
 
 The easiest way to contact me is to send an email at <hello@sul.im>.
+
+## Projects
+
+- [bookmarks.txt](https://github.com/soulim/bookmarks.txt) - a concept of keeping URLs in plain text files.
+- [Gateway](Gateway) - a board game where you rescue monsters instead of fighting them.
+- [ogi](https://github.com/soulim/ogi) - a tool to generate social media images with a geopattern background.
+- [puml](https://github.com/soulim/puml) - is a collection of tools for PlantUML.
