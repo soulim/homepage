@@ -6,7 +6,7 @@ enableEmoji = true
 # ignoreErrors = ["error-remote-getjson"]     # Ignore error in offline mode
 
 [sitemap]
-priority = 0.5
+  priority = 0.5
 
 [menus]
   [[menus.main]]
@@ -34,11 +34,6 @@ priority = 0.5
     name = "About"
     pageRef = "/about"
     weight = 50
-  # [[menus.main]]
-  #   title = "RSS"
-  #   name = "RSS"
-  #   url = "/blog/index.xml"
-  #   weight = 50
 
 [privacy]
   [privacy.x]
@@ -74,3 +69,7 @@ priority = 0.5
 [build]
   [build.buildStats]
     enable = true
+
+[markup]
+  [markup.highlight]
+    style = 'catppuccin-latte'
