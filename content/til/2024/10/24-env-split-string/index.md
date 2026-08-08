@@ -1,6 +1,7 @@
 +++
 title = "How to use multiple arguments in shebang lines"
 description = ""
+badge = "TIL Rating: good-to-know"
 # cover = ""
 date = 2024-10-24
 draft = false
@@ -51,7 +52,3 @@ When executed, the script from above would produce the following output:
   Hello, world.
   {{< /highlight >}}
 {{< /figure >}}
-
----
-
-{{< til-rating text="good to know" >}}

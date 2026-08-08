@@ -1,23 +1,23 @@
 {{ define "main" }}
-<section class="container col-md-6 py-5">
-  <header>
-    <h1 class="pb-2 border-bottom">{{ .Title }}</h1>
-    <div class="mb-5 text-muted">{{ .Content }}</div>
-  </header>
-  {{ range .Pages.ByDate.Reverse }}
-  <article class="my-5">
+  <section class="container col-md-6 py-5">
     <header>
-      <h2>
-        {{ if .Truncated }}
-        <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark"
-          >{{ .Title }}</a
-        >
-        {{ else }} {{ .Title }} {{ end }}
-      </h2>
-      <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+      <h1 class="pb-2 border-bottom">{{ .Title }}</h1>
+      <div class="lead mb-5">{{ .Content }}</div>
     </header>
-    {{ .Summary }}
-  </article>
-  {{ end }}
-</section>
+    {{ range .Pages.ByDate.Reverse }}
+      <article class="my-5">
+        <header>
+          <h2>
+            {{ if .Truncated }}
+              <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="bookmark">{{ .Title }}</a>
+            {{ else }}
+              {{ .Title }}
+            {{ end }}
+          </h2>
+          <p><time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+        </header>
+        {{ .Summary }}
+      </article>
+      {{ end }}
+  </section>
 {{ end }}

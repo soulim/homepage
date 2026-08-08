@@ -1,5 +1,6 @@
 +++
 title = "Running minitest without Rake"
+badge = "TIL Rating: good-to-know"
 description = ""
 # cover = ""
 date = 2024-11-11
@@ -43,26 +44,29 @@ So I wrote a script to run tests without anything but Ruby. It's basically a wra
   #   minitest test/**/*test.rb --verbose
   #
   #   minitest test/**/*test.rb --seed 123
-
+  
   files = []
 
   # Extract file paths from ARGV and keep only command-line options.
   # Minitest::autorun depends on values in ARGV, but expects only options there.
+
   ARGV.delete_if do |arg|
     keep = arg.end_with?(".rb")
     files.push(arg) if keep
-
     keep
   end
 
   # Require all test files because they will be later used by the minitest runner.
+
   files.each { |f| require(f) }
 
   # If no command-line arguments have been given, print help.
+
   ARGV.push("--help") if files.empty? && ARGV.empty?
 
   # Let minitest autorunner to do its job.
   # At this point the environment is setup and ready for tests to be executed.
+
   require "minitest/autorun"
   {{< /highlight >}}
 {{< /figure >}}
@@ -89,27 +93,22 @@ All command-line options of the minitest runner are available as well:
 {{< figure caption="" >}}
   {{< highlight shell >}}
   $ minitest --help
-  minitest options:
+    minitest options:
       -h, --help                       Display this help.
           --no-plugins                 Bypass minitest plugin auto-loading (or set $MT_NO_PLUGINS).
-      -s, --seed SEED                  Sets random seed. Also via env. Eg: SEED=n rake
-      -v, --verbose                    Verbose. Show progress processing files.
-      -q, --quiet                      Quiet. Show no progress processing files.
-          --show-skips                 Show skipped at the end of run.
-      -n, --name PATTERN               Filter run on /regexp/ or string.
-      -e, --exclude PATTERN            Exclude /regexp/ or string from run.
-      -S, --skip CODES                 Skip reporting of certain types of results (eg E).
-      -W[error]                        Turn Ruby warnings into errors
+      -s, --seed SEED Sets random seed. Also via env. Eg: SEED=n rake
+      -v, --verbose Verbose. Show progress processing files.
+      -q, --quiet Quiet. Show no progress processing files.
+          --show-skips Show skipped at the end of run.
+      -n, --name PATTERN Filter run on /regexp/ or string.
+      -e, --exclude PATTERN Exclude /regexp/ or string from run.
+      -S, --skip CODES Skip reporting of certain types of results (eg E).
+      -W[error] Turn Ruby warnings into errors
 
-  Known extensions: pride
-      -p, --pride                      Pride. Show your testing pride!
+    Known extensions: pride
+      -p, --pride Pride. Show your testing pride!
   {{< /highlight >}}
 {{< /figure >}}
-
----
-
-{{< til-rating text="good to know" >}}
-
 
 [1]: https://github.com/minitest/minitest
 [2]: https://github.com/minitest/minitest?tab=readme-ov-file#label-Rake+Tasks

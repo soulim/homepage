@@ -1,36 +1,40 @@
 {{ define "main" }}
-<section class="container col-md-6 mb-5 py-5">
-  <article>
-    <header>
-      <h1 class="pb-2 border-bottom">{{ .Title }}</h1>
-      <p class="mb-5">
-        <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
-      </p>
-    </header>
-    {{ .Content }}
-  </article>
-</section>
-
-{{ $readNext := or .NextInSection .PrevInSection }} {{ if $readNext }} {{ with
-$readNext }}
-<div class="bg-light">
-  <section class="container col-md-6 py-5">
-    <header>
-      <h1 class="pb-5">Next</h1>
-    </header>
+  <section class="container col-md-6 mb-5 py-5">
     <article>
       <header>
-        <h2>
-          <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next"
-            >{{ .Title }}</a
-          >
-        </h2>
-        <p>
+        <h1 class="pb-2 border-bottom">{{ .Title }}</h1>
+        <p class="lead d-flex justify-content-between mb-5">
           <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
+          {{ if .Params.badge }}
+            <span class="badge text-secondary-emphasis bg-secondary-subtle border border-secondary-subtle rounded-pill">{{ .Params.badge }}</span>
+          {{ end }}
         </p>
       </header>
-      {{ .Summary }}
+      {{ .Content }}
     </article>
   </section>
-</div>
-{{ end }} {{ end }} {{ end }}
+
+  {{ $readNext := or .NextInSection .PrevInSection }}
+  {{ if $readNext }}
+    {{ with $readNext }}
+      <div class="bg-light">
+        <section class="container col-md-6 py-5">
+          <header>
+            <h1 class="pb-5">Next</h1>
+          </header>
+          <article>
+            <header>
+              <h2>
+                <a href="{{ .RelPermalink }}" title="Read '{{ .Title }}'" rel="next">{{ .Title }}</a>
+              </h2>
+              <p>
+                <time class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</time>
+              </p>
+            </header>
+            {{ .Summary }}
+          </article>
+        </section>
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}
